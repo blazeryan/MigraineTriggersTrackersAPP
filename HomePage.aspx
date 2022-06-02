@@ -4,11 +4,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <link href="App_Themes/StyleSheet1.css" rel="stylesheet" />
     <title></title>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
+        <div class ="">
             <asp:Label ID="AppNameLabel" runat="server" style="z-index: 1; left: 530px; top: 15px; position: absolute" Text="Migraine Triggers &amp; Tracker"></asp:Label>
         </div>
         <asp:CheckBoxList ID="SymptomsCheckBoxList" runat="server" AutoPostBack="True" style="z-index: 1; left: 43px; top: 100px; position: absolute; height: 28px; width: 200px">
