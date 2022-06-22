@@ -33,57 +33,174 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.Label AppNameLabel;
 
         /// <summary>
-        /// SymptomsCheckBoxList control.
+        /// AddSymptomButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList SymptomsCheckBoxList;
+        protected global::System.Web.UI.WebControls.Button AddSymptomButton;
 
         /// <summary>
-        /// SymptomsLabel0 control.
+        /// FoodDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SymptomsLabel0;
+        protected global::System.Web.UI.WebControls.DropDownList FoodDropDownList;
 
         /// <summary>
-        /// FoodsLabel control.
+        /// SymptomsDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label FoodsLabel;
+        protected global::System.Web.UI.WebControls.DropDownList SymptomsDropDownList;
 
         /// <summary>
-        /// DrinksLabel control.
+        /// SymptomTimeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DrinksLabel;
+        protected global::System.Web.UI.WebControls.DropDownList SymptomTimeDropDownList;
 
         /// <summary>
-        /// SleepLabel control.
+        /// SleepDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label SleepLabel;
+        protected global::System.Web.UI.WebControls.DropDownList SleepDropDownList;
 
         /// <summary>
-        /// HeatLabel control.
+        /// SleepTimeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label HeatLabel;
+        protected global::System.Web.UI.WebControls.DropDownList SleepTimeDropDownList;
+
+        /// <summary>
+        /// FoodQuantityDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList FoodQuantityDropDownList;
+
+        /// <summary>
+        /// DrinksDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DrinksDropDownList;
+
+        /// <summary>
+        /// DrinksQuantityDrowDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DrinksQuantityDrowDownList;
+
+        /// <summary>
+        /// MigraineListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox MigraineListBox;
+
+        /// <summary>
+        /// NotesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NotesTextBox;
+
+        /// <summary>
+        /// HistoryButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button HistoryButton;
+
+        /// <summary>
+        /// Calendar1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar Calendar1;
+
+        /// <summary>
+        /// SubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitButton;
+
+        /// <summary>
+        /// AddSleepButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddSleepButton;
+
+        /// <summary>
+        /// AddFoodsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddFoodsButton;
+
+        /// <summary>
+        /// AddDrinksButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddDrinksButton;
+
+        /// <summary>
+        /// NotesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NotesLabel;
+
+        /// <summary>
+        /// MigraineDetailsLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MigraineDetailsLabel;
     }
 }
