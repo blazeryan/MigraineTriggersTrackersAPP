@@ -60,13 +60,13 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.DropDownList SymptomsDropDownList;
 
         /// <summary>
-        /// MigraineTriggersTrackers control.
+        /// SymptomDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource MigraineTriggersTrackers;
+        protected global::System.Web.UI.WebControls.SqlDataSource SymptomDataSource;
 
         /// <summary>
         /// SymptomTimeDropDownList control.
@@ -76,6 +76,15 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList SymptomTimeDropDownList;
+
+        /// <summary>
+        /// TimeDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource TimeDataSource;
 
         /// <summary>
         /// SleepDropDownList control.

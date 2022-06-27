@@ -18,13 +18,14 @@
                 <asp:ListItem>Foods</asp:ListItem>
             </asp:DropDownList>
         </p>
-        <asp:DropDownList ID="SymptomsDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SymptomsDropdownList_SelectedIndexChanged" style="z-index: 1; left: 50px; top: 80px; position: absolute; width: 105px; right: 1220px;" DataSourceID="MigraineTriggersTrackers" DataTextField="symptom_name" DataValueField="symptom_name">
+        <asp:DropDownList ID="SymptomsDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SymptomsDropdownList_SelectedIndexChanged" style="z-index: 1; left: 50px; top: 80px; position: absolute; width: 105px; right: 1220px;" DataSourceID="SymptomDataSource" DataTextField="symptom_name" DataValueField="symptom_name">
             <asp:ListItem>Symptoms</asp:ListItem>
         </asp:DropDownList>
-        <asp:SqlDataSource ID="MigraineTriggersTrackers" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]"></asp:SqlDataSource>
-        <asp:DropDownList ID="SymptomTimeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="MinutesDropDownList_SelectedIndexChanged" style="z-index: 1; left: 165px; top: 80px; position: absolute; width: 105px;">
+        <asp:SqlDataSource ID="SymptomDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]"></asp:SqlDataSource>
+        <asp:DropDownList ID="SymptomTimeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="MinutesDropDownList_SelectedIndexChanged" style="z-index: 1; left: 165px; top: 80px; position: absolute; width: 105px;" DataSourceID="TimeDataSource" DataTextField="time_number" DataValueField="time_number">
             <asp:ListItem>Time</asp:ListItem>
         </asp:DropDownList>
+        <asp:SqlDataSource ID="TimeDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [time_number] FROM [time]"></asp:SqlDataSource>
         <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 315px; top: 80px; position: absolute; width: 105px; right: 955px;" OnSelectedIndexChanged="SleepDropDownList_SelectedIndexChanged" AutoPostBack="True">
             <asp:ListItem>Sleep</asp:ListItem>
         </asp:DropDownList>
