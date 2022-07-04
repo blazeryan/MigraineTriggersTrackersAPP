@@ -17,11 +17,11 @@ namespace MigraineTriggersTrackersAPP
 
         protected void SymptomsDropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
         protected void MinutesDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
         protected void SleepDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -65,10 +65,21 @@ namespace MigraineTriggersTrackersAPP
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
         {
-
+            MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
+            MigraineListBox.Items.Add(SymptomTimeDropDownList.SelectedItem.ToString());
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SymptomDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void MigraineListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

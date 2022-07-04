@@ -21,7 +21,7 @@
         <asp:DropDownList ID="SymptomsDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SymptomsDropdownList_SelectedIndexChanged" style="z-index: 1; left: 50px; top: 80px; position: absolute; width: 105px; right: 1220px;" DataSourceID="SymptomDataSource" DataTextField="symptom_name" DataValueField="symptom_name">
             <asp:ListItem>Symptoms</asp:ListItem>
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SymptomDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SymptomDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" OnSelecting="SymptomDataSource_Selecting" SelectCommand="SELECT [symptom_name] FROM [symptom]"></asp:SqlDataSource>
         <asp:DropDownList ID="SymptomTimeDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="MinutesDropDownList_SelectedIndexChanged" style="z-index: 1; left: 165px; top: 80px; position: absolute; width: 105px;" DataSourceID="TimeDataSource" DataTextField="time_number" DataValueField="time_number">
             <asp:ListItem>Time</asp:ListItem>
         </asp:DropDownList>
@@ -41,7 +41,7 @@
         <asp:DropDownList ID="DrinksQuantityDrowDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 425px; top: 210px; position: absolute; width: 105px; right: 928px;" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
             <asp:ListItem>Quantity</asp:ListItem>
         </asp:DropDownList>
-        <asp:ListBox ID="MigraineListBox" runat="server" AutoPostBack="True" style="z-index: 1; left: 595px; top: 80px; position: absolute; height: 229px; width: 252px;"></asp:ListBox>
+        <asp:ListBox ID="MigraineListBox" runat="server" AutoPostBack="True" style="z-index: 1; left: 595px; top: 80px; position: absolute; height: 229px; width: 252px;" OnSelectedIndexChanged="MigraineListBox_SelectedIndexChanged"></asp:ListBox>
         <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 50px; top: 341px; position: absolute; width: 477px; height: 180px;"></asp:TextBox>
         <asp:Button ID="HistoryButton" runat="server" style="z-index: 1; left: 595px; top: 536px; position: absolute; width: 252px;" Text="History" Font-Bold="True" />
         <asp:Calendar ID="Calendar1" runat="server" style="z-index: 1; left: 595px; top: 342px; position: absolute; height: 184px; width: 252px" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True" Width="220px">
