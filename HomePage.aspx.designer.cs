@@ -60,58 +60,22 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.DropDownList SymptomsDropDownList;
 
         /// <summary>
-        /// SymptomDataSource control.
+        /// TimeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SymptomDataSource;
+        protected global::System.Web.UI.WebControls.DropDownList TimeDropDownList;
 
         /// <summary>
-        /// SymptomTimeDropDownList control.
+        /// IntensityDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SymptomTimeDropDownList;
-
-        /// <summary>
-        /// TimeDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource TimeDataSource;
-
-        /// <summary>
-        /// SleepDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SleepDropDownList;
-
-        /// <summary>
-        /// SleepTimeDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList SleepTimeDropDownList;
-
-        /// <summary>
-        /// FoodQuantityDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList FoodQuantityDropDownList;
+        protected global::System.Web.UI.WebControls.DropDownList IntensityDropDownList;
 
         /// <summary>
         /// DrinksDropDownList control.
@@ -123,13 +87,13 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.DropDownList DrinksDropDownList;
 
         /// <summary>
-        /// DrinksQuantityDrowDownList control.
+        /// QuantityDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DrinksQuantityDrowDownList;
+        protected global::System.Web.UI.WebControls.DropDownList QuantityDropDownList;
 
         /// <summary>
         /// MigraineListBox control.
@@ -220,5 +184,14 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label MigraineDetailsLabel;
+
+        /// <summary>
+        /// SleepDropDownList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList SleepDropDownList;
     }
 }

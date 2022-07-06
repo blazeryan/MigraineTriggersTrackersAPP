@@ -15,23 +15,17 @@ namespace MigraineTriggersTrackersAPP
         }
 
 
-        protected void SymptomsDropdownList_SelectedIndexChanged(object sender, EventArgs e)
+        protected void TimeDropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             
         }
-        protected void MinutesDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+     
         protected void SleepDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        protected void SleepTimeDropdownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+    
         protected void FoodDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -48,12 +42,8 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
-        protected void DrinksQuantityDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void QuantityDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -66,7 +56,8 @@ namespace MigraineTriggersTrackersAPP
         protected void AddSymptomButton_Click(object sender, EventArgs e)
         {
             MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
-            MigraineListBox.Items.Add(SymptomTimeDropDownList.SelectedItem.ToString());
+            MigraineListBox.Items.Add(TimeDropDownList.SelectedItem.ToString());
+           
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
@@ -80,6 +71,28 @@ namespace MigraineTriggersTrackersAPP
         }
 
         protected void MigraineListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+        protected void SymptomsDropdownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TimeDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void QuantityDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void IntensityDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }
