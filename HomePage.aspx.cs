@@ -54,11 +54,21 @@ namespace MigraineTriggersTrackersAPP
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
-        {
+        {   // Add Selected dropdown items to listbox
             MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
             TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Reset DropDownLists to Index 0 or NA
+            SymptomsDropDownList.SelectedIndex = 0;
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
+            IntensityDropDownList.SelectedIndex = 0;
+            QuantityDropDownList.SelectedIndex = 0;
+            FoodDropDownList.SelectedIndex = 0;
+            SleepDropDownList.SelectedIndex = 0;
+            DrinksDropDownList.SelectedIndex = 0;
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
@@ -67,6 +77,16 @@ namespace MigraineTriggersTrackersAPP
             TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Reset DropDownLists to Index 0 or NA
+            SymptomsDropDownList.SelectedIndex = 0;
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
+            IntensityDropDownList.SelectedIndex = 0;
+            QuantityDropDownList.SelectedIndex = 0;
+            FoodDropDownList.SelectedIndex = 0;
+            SleepDropDownList.SelectedIndex = 0;
+            DrinksDropDownList.SelectedIndex = 0;
         }
 
         protected void SymptomDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -134,18 +154,38 @@ namespace MigraineTriggersTrackersAPP
 
         protected void AddFoodsButton_Click(object sender, EventArgs e)
         {
-            MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
+            MigraineListBox.Items.Add(FoodDropDownList.SelectedItem.ToString());
             TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Reset DropDownLists to Index 0 or NA
+            SymptomsDropDownList.SelectedIndex = 0;
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
+            IntensityDropDownList.SelectedIndex = 0;
+            QuantityDropDownList.SelectedIndex = 0;
+            FoodDropDownList.SelectedIndex = 0;
+            SleepDropDownList.SelectedIndex = 0;
+            DrinksDropDownList.SelectedIndex = 0;
         }
 
         protected void AddDrinksButton_Click(object sender, EventArgs e)
         {
-            MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
+            MigraineListBox.Items.Add(DrinksDropDownList.SelectedItem.ToString());
             TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Reset DropDownLists to Index 0 or NA
+            SymptomsDropDownList.SelectedIndex = 0;
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
+            IntensityDropDownList.SelectedIndex = 0;
+            QuantityDropDownList.SelectedIndex = 0;
+            FoodDropDownList.SelectedIndex = 0;
+            SleepDropDownList.SelectedIndex = 0;
+            DrinksDropDownList.SelectedIndex = 0;
         }
 
 
@@ -170,6 +210,11 @@ namespace MigraineTriggersTrackersAPP
         }
 
         protected void MinutesDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void SleepDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
         }

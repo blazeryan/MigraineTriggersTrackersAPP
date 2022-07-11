@@ -75,10 +75,10 @@
         <asp:Button ID="AddDrinksButton" runat="server" Text="ADD DRINKS" Font-Bold="True" style="z-index: 1; left: 394px; top: 255px; position: absolute; width: 130px;" OnClick="AddDrinksButton_Click" />
         <asp:Label ID="NotesLabel" runat="server" Font-Bold="True" style="z-index: 1; left: 264px; top: 315px; position: absolute" Text="Notes"></asp:Label>
         <asp:Label ID="DetailLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 598px; top: 61px; position: absolute; width: 58px" Text="Detail"></asp:Label>
-        <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 420px; top: 76px; position: absolute; width: 105px;" DataSourceID="SleepDataSource" DataTextField="sleep_quality" DataValueField="sleep_quality">
+        <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 420px; top: 76px; position: absolute; width: 105px;" DataSourceID="SleepDataSource" DataTextField="sleep_name" DataValueField="sleep_name" AutoPostBack="True" OnSelectedIndexChanged="SleepDropDownList_SelectedIndexChanged1">
             <asp:ListItem>Sleep</asp:ListItem>
         </asp:DropDownList>
-        <asp:SqlDataSource ID="SleepDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [sleep_quality] FROM [sleep]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="SleepDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [sleep_name] FROM [sleep]"></asp:SqlDataSource>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="True" ForeColor="#003399" style="z-index: 1; left: 874px; top: 63px; position: absolute" Text="Quantity"></asp:Label>
         <asp:Label ID="TimeListBoxLabel" runat="server" BorderColor="White" CssClass="TimeListBoxClass" Font-Bold="True" Text="Time" ForeColor="#003399"></asp:Label>
     </form>
