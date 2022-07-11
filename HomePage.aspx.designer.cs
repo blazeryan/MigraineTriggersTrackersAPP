@@ -159,6 +159,15 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.SqlDataSource IntensityDataSource;
 
         /// <summary>
+        /// RemoveLastButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button RemoveLastButton;
+
+        /// <summary>
         /// IntensityListBoxLabel control.
         /// </summary>
         /// <remarks>

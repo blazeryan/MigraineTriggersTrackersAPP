@@ -74,7 +74,16 @@ namespace MigraineTriggersTrackersAPP
         protected void AddSleepButton_Click(object sender, EventArgs e)
         {
              MigraineListBox.Items.Add(SleepDropDownList.SelectedItem.ToString());
-            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+
+            // Add Minutes Drop Down Only if Hours Drop Down is Not Selected
+            if (HoursDropDownList.SelectedIndex != 0)
+            {
+                TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+            }
+            else
+            {
+                TimeListBox.Items.Add(MinutesDropDownList.SelectedItem.ToString());
+            }
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
@@ -217,6 +226,22 @@ namespace MigraineTriggersTrackersAPP
         protected void SleepDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
 
+        }
+
+        protected void ClearLastItemButton_Click(object sender, EventArgs e)
+        {
+            MigraineListBox.Items.RemoveAt(MigraineListBox.Items.Count - 1);
+            TimeListBox.Items.RemoveAt(TimeListBox.Items.Count - 1);
+            IntensityListBox.Items.RemoveAt(IntensityListBox.Items.Count - 1);
+            QuantityDropDownList.Items.RemoveAt(QuantityDropDownList.Items.Count - 1);
+        }
+
+        protected void RemoveLastButton_Click(object sender, EventArgs e)
+        {
+            MigraineListBox.Items.RemoveAt(MigraineListBox.Items.Count - 1);
+            TimeListBox.Items.RemoveAt(TimeListBox.Items.Count - 1);
+            IntensityListBox.Items.RemoveAt(IntensityListBox.Items.Count - 1);
+            QuantityListBox.Items.RemoveAt(QuantityDropDownList.Items.Count - 1);
         }
     }
 }

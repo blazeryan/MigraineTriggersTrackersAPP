@@ -46,6 +46,7 @@
             <asp:ListItem Value="Intensity"></asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="IntensityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [intensity_number] FROM [intensity]"></asp:SqlDataSource>
+        <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 600px; top: 310px; position: absolute" Text="Remove Last" />
         <asp:Label ID="IntensityListBoxLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 786px; top: 62px; position: absolute" Text="Intensity"></asp:Label>
         <asp:DropDownList ID="DrinksDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 420px; top: 210px; position: absolute; width: 105px;" DataSourceID="DrinksDataSource" DataTextField="drink_name" DataValueField="drink_name">
             <asp:ListItem>Drinks</asp:ListItem>
