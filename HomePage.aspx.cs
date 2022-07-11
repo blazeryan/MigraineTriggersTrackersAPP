@@ -11,7 +11,7 @@ namespace MigraineTriggersTrackersAPP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
 
@@ -56,13 +56,17 @@ namespace MigraineTriggersTrackersAPP
         protected void AddSymptomButton_Click(object sender, EventArgs e)
         {
             MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
-            MigraineListBox.Items.Add(TimeDropDownList.SelectedItem.ToString());
-           
+            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+            IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
+            QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
         {
-
+             MigraineListBox.Items.Add(SleepDropDownList.SelectedItem.ToString());
+            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+            IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
+            QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
         }
 
         protected void SymptomDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -82,10 +86,6 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
-        protected void TimeDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-
-        }
 
         protected void QuantityDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
@@ -93,6 +93,83 @@ namespace MigraineTriggersTrackersAPP
         }
 
         protected void IntensityDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void NotesTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SymptomsDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void TimeListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void QuantityListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void DrinksDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void AddFoodsButton_Click(object sender, EventArgs e)
+        {
+            MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
+            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+            IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
+            QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+        }
+
+        protected void AddDrinksButton_Click(object sender, EventArgs e)
+        {
+            MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
+            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
+            IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
+            QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+        }
+
+
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void HoursDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void MinutesDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void TimeDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void MinutesDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
         }
