@@ -83,14 +83,13 @@ namespace MigraineTriggersTrackersAPP
 
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
-            // HoursDropDownList.SelectedIndex = 0;
-            //MinutesDropDownList.SelectedIndex = 0;
+          
             IntensityDropDownList.SelectedIndex = 0;
             QuantityDropDownList.SelectedIndex = 0;
             FoodDropDownList.SelectedIndex = 0;
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
-
+        
 
             string hoursSelected = "";
             string minutesSelected = "";
@@ -111,6 +110,9 @@ namespace MigraineTriggersTrackersAPP
 
             TimeListBox.Items.Add(totalMinutes.ToString());
 
+            // Reset Hours and Minutes DropDownLists after Selected Hours & Times have been populated onto List Box
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
         }
 
         protected void SymptomDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
