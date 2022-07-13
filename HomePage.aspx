@@ -69,7 +69,7 @@
             <TitleStyle BackColor="#0066FF" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
             <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
         </asp:Calendar>
-        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 444px; top: 574px; position: absolute; width: 252px;" Text="Submit" Font-Bold="True" BackColor="#0066FF" />
+        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 444px; top: 574px; position: absolute; width: 252px;" Text="Submit" Font-Bold="True" BackColor="#0066FF" OnClick="SubmitButton_Click" />
         <asp:Button ID="AddSleepButton" runat="server" style="z-index: 1; left: 565px; top: 125px; position: absolute; width: 130px;" Text="ADD SLEEP" OnClick="AddSleepButton_Click" Font-Bold="True" />
         <asp:Button ID="AddFoodsButton" runat="server" style="z-index: 1; left: 50px; top: 255px; position: absolute; width: 130px" Text="ADD FOODS" Font-Bold="True" OnClick="AddFoodsButton_Click" />
         <asp:Button ID="AddDrinksButton" runat="server" Text="ADD DRINKS" Font-Bold="True" style="z-index: 1; left: 565px; top: 255px; position: absolute; width: 130px;" OnClick="AddDrinksButton_Click" />

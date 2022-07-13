@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+
+
 
 namespace MigraineTriggersTrackersAPP
 {
@@ -11,6 +14,47 @@ namespace MigraineTriggersTrackersAPP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            // Variable declaration
+            string connectionString;
+            SqlConnection cnn;
+
+                // Set connection string
+                connectionString = "Data Source=(local);Initial Catalog=MigraineTriggersTrackersDB;Integrated Security=True";
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+            Response.Write("Connection Made");
+            // cnn.Close();
+
+            // Construct select statement to read data from database.
+            SqlCommand command;
+            SqlDataReader dataReader;
+            String sql, Output = "";
+
+            // Define sql statement
+            sql = "SELECT migraine_detail,migraine_id, migraine_detail, time, quantity, intensity FROM migraine";
+
+            // command statement
+            command = new SqlCommand(sql, cnn);
+
+            // Define the data reader
+            dataReader = command.ExecuteReader();
+
+            
+
+            // Get the table values from multiple table columns
+            while (dataReader.Read()){
+                Output = Output + dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2) + " - " + dataReader.GetValue(3) +  " - " + dataReader.GetValue(4) + dataReader.GetValue(5) +  "</br>";
+            }
+
+
+            Response.Write(Output);
+            dataReader.Close();
+            command.Dispose();
+            cnn.Close();
+
+
 
         }
 
@@ -367,5 +411,12 @@ protected void RemoveLastButton_Click(object sender, EventArgs e)
     IntensityListBox.Items.RemoveAt(IntensityListBox.Items.Count - 1);
     QuantityListBox.Items.RemoveAt(QuantityDropDownList.Items.Count - 1);
 }
+
+        protected void SubmitButton_Click(object sender, EventArgs e)
+        {
+
+            
+
+        }
     }
 }
