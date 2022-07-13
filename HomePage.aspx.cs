@@ -54,6 +54,27 @@ namespace MigraineTriggersTrackersAPP
             command.Dispose();
             cnn.Close();
 
+            // Open connection
+            cnn.Open();
+
+            // Define variables
+            SqlCommand command2;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            String sql2 = "";
+
+            // Define insert statement
+            // sql2 = "INSERT INTO migraine (migraine_id, migraine_detail, time, quantity, intensity) VALUES(1,'Vomiting' , '5 hr & 4 min' , '3' , '10')";
+            sql2 = "INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES('Santa' , '5 hr & 4 min' , '8' , '69')";
+            // Define the sql command
+            command2 = new SqlCommand(sql2, cnn);
+
+            // Associate the insert command
+            adapter.InsertCommand = new SqlCommand(sql2, cnn);
+            adapter.InsertCommand.ExecuteNonQuery();
+
+            // Close all objects
+            command2.Dispose();
+            cnn.Close();
 
 
         }
