@@ -93,11 +93,7 @@ namespace MigraineTriggersTrackersAPP
 
             string hoursSelected = "NA";
             string minutesSelected = "NA";
-            int hoursSelectedToInt = 0;
-            int minutesSelectedToInt = 0;
-            int totalMinutes = 0;
-
-            // Convert Selected DropDown Hours to Minutes & add them to Selected Minutes
+            string hoursAndMinutes = "NA";
 
             if (HoursDropDownList.SelectedIndex != 0)
             {
@@ -109,34 +105,73 @@ namespace MigraineTriggersTrackersAPP
                 minutesSelected = MinutesDropDownList.SelectedValue.ToString();
             }
 
-            if (hoursSelected != "NA")
+            if (hoursSelected != "NA" && minutesSelected != "NA")
             {
-                hoursSelectedToInt = Convert.ToInt32(hoursSelected);
+                hoursAndMinutes = (hoursSelected + "hrs & " + minutesSelected + "min");
             }
 
-            if (hoursSelected != "NA")
-            {
-                hoursSelectedToInt = hoursSelectedToInt * 60;
-            }
+           
 
-            if (minutesSelected != "NA")
-            {
-                minutesSelectedToInt = Convert.ToInt32(minutesSelected);
-
-            }
-
-            if (hoursSelectedToInt != 0)
-            { 
-                   totalMinutes = hoursSelectedToInt;
-            }
-        
-            if (minutesSelectedToInt != 0)
-            {
-                    totalMinutes = totalMinutes + minutesSelectedToInt;
-            }
+            TimeListBox.Items.Add(hoursAndMinutes);
 
 
-    TimeListBox.Items.Add(totalMinutes.ToString());
+
+
+            //double hoursSelectedToInt = 0;
+            //double minutesSelectedToInt = 0;
+            //double totalMinutes = 0;
+
+            // Convert Selected DropDown Hours to Minutes 
+
+            //if (HoursDropDownList.SelectedIndex != 0)
+            //{
+            //    hoursSelected = HoursDropDownList.SelectedValue.ToString();
+            //}
+
+            //if (MinutesDropDownList.SelectedIndex != 0)
+            //{
+            //    minutesSelected = MinutesDropDownList.SelectedValue.ToString();
+            //}
+
+            //if (hoursSelected != "NA")
+            //{
+            //    hoursSelectedToInt = Convert.ToDouble(hoursSelected);
+            //}
+
+            //if (hoursSelected != "NA")
+            //{
+            //    hoursSelectedToInt = hoursSelectedToInt * 60;
+            //}
+
+            //if (minutesSelected != "NA")
+            //{
+            //    minutesSelectedToInt = Convert.ToDouble(minutesSelected);
+
+            //}
+
+            //if (hoursSelectedToInt != 0)
+            //{ 
+            //       totalMinutes = hoursSelectedToInt;
+            //}
+
+            //// add Converted minutes to Selected Minutes
+            //if (minutesSelectedToInt != 0)
+            //{
+            //        totalMinutes = totalMinutes + minutesSelectedToInt;
+            //}
+
+            //// Left off here!!!!!!!!!!!!!!!!!
+            ///////////////////////////////////////////////////////////////////////////////////////////
+            /////
+            //// Convert Total Minutes to Hours & Minutes
+            //double hoursAndMinutes = (totalMinutes % 60) / 60;
+
+
+
+
+
+            // TimeListBox.Items.Add(hoursAndMinutes.ToString());
+            // TimeListBox.Items.Add(totalMinutes.ToString());
 
             // Reset Hours and Minutes DropDownLists after Selected Hours & Times have been populated onto List Box
             HoursDropDownList.SelectedIndex = 0;
