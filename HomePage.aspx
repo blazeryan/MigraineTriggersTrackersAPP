@@ -19,7 +19,7 @@
 <body style="height: 38px">
     <form id="form1" style="height: 1000px" runat="server">
         <div class ="">
-            <asp:Label ID="AppNameLabel" runat="server" style="z-index: 1; left: 167px; top: 15px; position: absolute" Text="Migraine Triggers &amp; Tracker" Font-Bold="True"></asp:Label>
+            <asp:Label ID="AppNameLabel" runat="server" style="z-index: 1; left: 266px; top: 15px; position: absolute" Text="Migraine Triggers &amp; Tracker" Font-Bold="True"></asp:Label>
             <asp:Button ID="AddSymptomButton" runat="server" style="z-index: 1; left: 50px; top: 125px; position: absolute; width: 130px;" Text="ADD SYMPTOM" OnClick="AddSymptomButton_Click" Font-Bold="True" />
         </div>
         <p>
@@ -34,7 +34,7 @@
             <asp:ListItem>Symptoms</asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="SymptomsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]" OnSelecting="SymptomsDataSource_Selecting"></asp:SqlDataSource>
-        <asp:DropDownList ID="HoursDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 315px; top: 76px; position: absolute; width: 105px;" OnSelectedIndexChanged="HoursDropDownList_SelectedIndexChanged1" DataSourceID="HoursDataSource" DataTextField="hours_number" DataValueField="hours_number">
+        <asp:DropDownList ID="HoursDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 315px; top: 80px; position: absolute; width: 105px;" OnSelectedIndexChanged="HoursDropDownList_SelectedIndexChanged1" DataSourceID="HoursDataSource" DataTextField="hours_number" DataValueField="hours_number">
             <asp:ListItem>Time</asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="HoursDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [hours_number] FROM [hours]"></asp:SqlDataSource>
@@ -75,7 +75,7 @@
         <asp:Button ID="AddDrinksButton" runat="server" Text="ADD DRINKS" Font-Bold="True" style="z-index: 1; left: 565px; top: 255px; position: absolute; width: 130px;" OnClick="AddDrinksButton_Click" />
         <asp:Label ID="NotesLabel" runat="server" Font-Bold="True" style="z-index: 1; left: 344px; top: 608px; position: absolute" Text="Notes"></asp:Label>
         <asp:Label ID="DetailLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 55px; top: 314px; position: absolute; width: 58px" Text="Detail"></asp:Label>
-        <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 565px; top: 76px; position: absolute; width: 130px;" DataSourceID="SleepDataSource" DataTextField="sleep_name" DataValueField="sleep_name" AutoPostBack="True" OnSelectedIndexChanged="SleepDropDownList_SelectedIndexChanged1">
+        <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 565px; top: 80px; position: absolute; width: 130px;" DataSourceID="SleepDataSource" DataTextField="sleep_name" DataValueField="sleep_name" AutoPostBack="True" OnSelectedIndexChanged="SleepDropDownList_SelectedIndexChanged1">
             <asp:ListItem>Sleep</asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="SleepDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [sleep_name] FROM [sleep]"></asp:SqlDataSource>

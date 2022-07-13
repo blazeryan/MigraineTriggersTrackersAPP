@@ -56,19 +56,53 @@ namespace MigraineTriggersTrackersAPP
         protected void AddSymptomButton_Click(object sender, EventArgs e)
         {   // Add Selected dropdown items to listbox
             MigraineListBox.Items.Add(SymptomsDropDownList.SelectedItem.ToString());
-            TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
-            HoursDropDownList.SelectedIndex = 0;
-            MinutesDropDownList.SelectedIndex = 0;
             IntensityDropDownList.SelectedIndex = 0;
             QuantityDropDownList.SelectedIndex = 0;
             FoodDropDownList.SelectedIndex = 0;
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
+
+            string hoursSelected = "NA";
+            string minutesSelected = "NA";
+            string hoursAndMinutes = "NA";
+
+            // Get Hours Selected from hours dropdown control
+            if (HoursDropDownList.SelectedIndex != 0)
+            {
+                hoursSelected = HoursDropDownList.SelectedValue.ToString();
+            }
+
+            // Get Minutes Selected from minutes dropdown control
+            if (MinutesDropDownList.SelectedIndex != 0)
+            {
+                minutesSelected = MinutesDropDownList.SelectedValue.ToString();
+            }
+
+            // Choose Hours or Minutes text after selected time
+            if (hoursSelected != "NA" && minutesSelected == "NA")
+            {
+                hoursAndMinutes = (hoursSelected + "hrs");
+            }
+            else if (hoursSelected == "NA" && minutesSelected != "NA")
+            {
+                hoursAndMinutes = (minutesSelected + "min");
+            }
+            else if (hoursSelected != "NA" && minutesSelected != "NA")
+            {
+                hoursAndMinutes = (hoursSelected + "hrs & " + minutesSelected + "min");
+            }
+
+            // Add total time to list box
+            TimeListBox.Items.Add(hoursAndMinutes);
+
+            // Reset Hour & Minute DropDownLists
+            HoursDropDownList.SelectedIndex = 0;
+            MinutesDropDownList.SelectedIndex = 0;
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
@@ -76,14 +110,11 @@ namespace MigraineTriggersTrackersAPP
 
 
             MigraineListBox.Items.Add(SleepDropDownList.SelectedItem.ToString());
-
-
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
-
             IntensityDropDownList.SelectedIndex = 0;
             QuantityDropDownList.SelectedIndex = 0;
             FoodDropDownList.SelectedIndex = 0;
@@ -95,23 +126,28 @@ namespace MigraineTriggersTrackersAPP
             string minutesSelected = "NA";
             string hoursAndMinutes = "NA";
 
+            // Get Hours Selected from hours dropdown control
             if (HoursDropDownList.SelectedIndex != 0)
             {
                 hoursSelected = HoursDropDownList.SelectedValue.ToString();
             }
 
+            // Get Minutes Selected from minutes dropdown control
             if (MinutesDropDownList.SelectedIndex != 0)
             {
                 minutesSelected = MinutesDropDownList.SelectedValue.ToString();
             }
 
-            if (hoursSelected != "NA" && minutesSelected != "NA")
-            {
+            // Choose Hours or Minutes text after selected time
+            if (hoursSelected != "NA" && minutesSelected == "NA"){
+                hoursAndMinutes = (hoursSelected + "hrs");
+            }else if (hoursSelected == "NA" && minutesSelected != "NA"){
+                hoursAndMinutes = (minutesSelected + "min");
+            }else if(hoursSelected != "NA" && minutesSelected != "NA"){ 
                 hoursAndMinutes = (hoursSelected + "hrs & " + minutesSelected + "min");
             }
 
-           
-
+            // Add total time to list box
             TimeListBox.Items.Add(hoursAndMinutes);
 
 
