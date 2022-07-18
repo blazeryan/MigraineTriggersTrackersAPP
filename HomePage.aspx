@@ -58,9 +58,9 @@
         
         <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]"></asp:SqlDataSource>
         
-            <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 447px; top: 342px; position: absolute; width: 537px; height: 229px;" OnTextChanged="NotesTextBox_TextChanged"></asp:TextBox>
-        <asp:Button ID="HistoryButton" runat="server" style="z-index: 1; left: 740px; top: 301px; position: absolute; width: 252px;" Text="History" Font-Bold="True" BackColor="#FFCC66" />
-        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 1; left: 740px; top: 81px; position: absolute; height: 203px; width: 252px; " BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True" Width="220px">
+            <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 447px; top: 342px; position: absolute; width: 544px; height: 229px;" OnTextChanged="NotesTextBox_TextChanged"></asp:TextBox>
+        <asp:Button ID="HistoryButton" runat="server" style="z-index: 1; left: 740px; top: 285px; position: absolute; width: 252px;" Text="History" Font-Bold="True" BackColor="#FFCC66" />
+        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 1; left: 740px; top: 81px; position: absolute; height: 195px; width: 252px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True" Width="220px">
             <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
             <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
             <OtherMonthDayStyle ForeColor="#CC9966" />

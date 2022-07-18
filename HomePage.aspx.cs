@@ -510,6 +510,10 @@ namespace MigraineTriggersTrackersAPP
             adapter3.InsertCommand = new SqlCommand(sql3, cnn);
             adapter3.InsertCommand.ExecuteNonQuery();
 
+
+
+
+
             // Close all objects
             command3.Dispose();
             cnn.Close();
@@ -519,5 +523,9 @@ namespace MigraineTriggersTrackersAPP
         {
 
         }
+
+
+
+
     }
 }
