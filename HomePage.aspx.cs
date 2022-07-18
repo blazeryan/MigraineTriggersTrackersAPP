@@ -32,7 +32,7 @@ namespace MigraineTriggersTrackersAPP
             String sql, Output = "";
 
             // Define sql statement
-            sql = "SELECT details_id, migraine_detail, time, quantity, intensity FROM details";
+            sql = "SELECT migraine_detail,details_id, migraine_detail, time, quantity, intensity FROM details";
 
             // command statement
             command = new SqlCommand(sql, cnn);
@@ -513,6 +513,11 @@ namespace MigraineTriggersTrackersAPP
             // Close all objects
             command3.Dispose();
             cnn.Close();
+        }
+
+        protected void DetailsGridView_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
