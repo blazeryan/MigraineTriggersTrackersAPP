@@ -465,12 +465,6 @@ namespace MigraineTriggersTrackersAPP
             SqlDataAdapter adapter3 = new SqlDataAdapter();
             String sql3 = "";
 
-            //string MigraineListBoxColumn = MigraineListBox.SelectedItem.ToString();
-            //Response.Write("This is MigraineListBoxColumn Variable:  " + MigraineListBoxColumn);
-
-            //var migraineSelectedItem = MigraineListBox.SelectedItem.Value;
-            //Response.Write(migraineSelectedItem);
-
             System.Collections.IList list = MigraineListBox.Items;
             for (int i = 0; i < list.Count; i++)
             {
@@ -490,71 +484,24 @@ namespace MigraineTriggersTrackersAPP
                 //Response.Write(quantityListBoxItem.ToString());
                 Debug.Write(quantityListBoxItem.ToString());
 
-                //Response.Write(
-               // string.Format("Row Number {4}: I can insert a row like: {0}, {1}, {2}, {3} ",
-                   // migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i));
-
-                //Response.Write(
-                //string.Format("INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES ( {0}, {1}, {2}, {3} )",
-                   // migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i));
-
                 sql3 = string.Format("INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES ('{0}', '{1}', '{2}', '{3}' )",
                 migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i);
 
-
                 command3 = new SqlCommand(sql3, cnn);
-
 
                 // Associate the insert command
                 adapter3.InsertCommand = new SqlCommand(sql3, cnn);
                 adapter3.InsertCommand.ExecuteNonQuery();
 
-
             }
 
-            //foreach (var item in MigraineListBox.Items)
-            //{
-            //    Response.Write(item.ToString());
-            //    Debug.Write(item.ToString());
-            //    // if this works, insert thees
-            //}
-            //foreach (var item in TimeListBox.Items)
-            //{
-            //    Response.Write(item.ToString());
-            //    Debug.Write(item.ToString());
-            //    // if this works, insert thees
-            //}
-            //foreach (var item in IntensityListBox.Items)
-            //{
-            //    Response.Write(item.ToString());
-            //    Debug.Write(item.ToString());
-            //    // if this works, insert thees
-            //}
-            //foreach (var item in QuantityListBox.Items)
-            //{
-            //    Response.Write(item.ToString());
-            //    Debug.Write(item.ToString());
-            //    // if this works, insert thees
-            //}
-
-            //string.Format("INSERT INTO migraine(migraine_detail, time, quantity, intensity) VALUES({0},{1},{2},{3}", migraineSelectedItem,"TWO","THREE");
-
-
-            // sql3 = "INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES (migraineSelectedItem, TimeListBox., QuantityListBox.SelectedItem.Value, IntensityListBox.SelectedItem.Value)";
-           // sql3 = "INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES ('Test ', ' ', ' ', ' ' )"; 
              // Define the sql command
              command3 = new SqlCommand(sql3, cnn);
-
-
-          //
 
             // Associate the insert command
             adapter3.InsertCommand = new SqlCommand(sql3, cnn);
             adapter3.InsertCommand.ExecuteNonQuery();
 
-
-           
-            
             // Close all objects
             command3.Dispose();
             cnn.Close();
