@@ -465,6 +465,8 @@ namespace MigraineTriggersTrackersAPP
             SqlDataAdapter adapter3 = new SqlDataAdapter();
             String sql3 = "";
 
+     
+
             System.Collections.IList list = MigraineListBox.Items;
             for (int i = 0; i < list.Count; i++)
             {
@@ -487,27 +489,24 @@ namespace MigraineTriggersTrackersAPP
                 sql3 = string.Format("INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES ('{0}', '{1}', '{2}', '{3}' )",
                 migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i);
 
-
-                // Define the sql command
                 command3 = new SqlCommand(sql3, cnn);
 
                 // Associate the insert command
                 adapter3.InsertCommand = new SqlCommand(sql3, cnn);
                 adapter3.InsertCommand.ExecuteNonQuery();
 
-
-                // Close all objects
-                command3.Dispose();
-                cnn.Close();
-
-
-
             }
 
-             
+             // Define the sql command
+             command3 = new SqlCommand(sql3, cnn);
 
-         
+            // Associate the insert command
+            adapter3.InsertCommand = new SqlCommand(sql3, cnn);
+            adapter3.InsertCommand.ExecuteNonQuery();
 
+            // Close all objects
+            command3.Dispose();
+            cnn.Close();
         }
     }
 }
