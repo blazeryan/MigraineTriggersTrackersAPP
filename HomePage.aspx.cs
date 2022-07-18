@@ -546,7 +546,7 @@ namespace MigraineTriggersTrackersAPP
              command3 = new SqlCommand(sql3, cnn);
 
 
-          
+          //
 
             // Associate the insert command
             adapter3.InsertCommand = new SqlCommand(sql3, cnn);
