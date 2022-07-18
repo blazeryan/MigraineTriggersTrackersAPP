@@ -32,7 +32,7 @@ namespace MigraineTriggersTrackersAPP
             String sql, Output = "";
 
             // Define sql statement
-            sql = "SELECT migraine_detail,migraine_id, migraine_detail, time, quantity, intensity FROM migraine";
+            sql = "SELECT details_id, migraine_detail, time, quantity, intensity FROM details";
 
             // command statement
             command = new SqlCommand(sql, cnn);
@@ -486,7 +486,7 @@ namespace MigraineTriggersTrackersAPP
                 //Response.Write(quantityListBoxItem.ToString());
                 Debug.Write(quantityListBoxItem.ToString());
 
-                sql3 = string.Format("INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES ('{0}', '{1}', '{2}', '{3}' )",
+                sql3 = string.Format("INSERT INTO details (migraine_detail, time, quantity, intensity) VALUES ('{0}', '{1}', '{2}', '{3}' )",
                 migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i);
 
                 command3 = new SqlCommand(sql3, cnn);
@@ -497,8 +497,14 @@ namespace MigraineTriggersTrackersAPP
 
             }
 
-             // Define the sql command
-             command3 = new SqlCommand(sql3, cnn);
+            // Get NotesTextBox text
+            var NotesTexBoxItem = NotesTextBox.Text;
+            // Insert Notes from NotesTextBox into notes column in migraine table
+            sql3 = string.Format("INSERT INTO details (notes) VALUES ('{0}')", NotesTexBoxItem);
+
+
+              // Define the sql command
+              command3 = new SqlCommand(sql3, cnn);
 
             // Associate the insert command
             adapter3.InsertCommand = new SqlCommand(sql3, cnn);
