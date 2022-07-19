@@ -36,7 +36,7 @@
         <asp:Panel ID="TriggersPanel" runat="server" BackColor="#0066FF" style="z-index: 0; left: 225px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
         </asp:Panel>
         <asp:SqlDataSource ID="SymptomsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]" OnSelecting="SymptomsDataSource_Selecting"></asp:SqlDataSource>
-        <asp:Button ID="InputSleepButton" runat="server" style="z-index: 1; left: 47px; top: 171px; position: absolute; width: 130px" Text="Input Sleep Details" />
+        <asp:Button ID="InputSleepButton" runat="server" style="z-index: 1; left: 47px; top: 350px; position: absolute; width: 130px" Text="Sleep Details &gt;&gt;" />
         <asp:Label ID="TriggersPanelLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 276px; top: 26px; position: absolute" Text="Triggers" Font-Italic="True"></asp:Label>
         <asp:Panel ID="PropertiesPanel" runat="server" BackColor="#0066FF" style="z-index: 1; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
         </asp:Panel>
