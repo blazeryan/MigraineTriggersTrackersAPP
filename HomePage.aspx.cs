@@ -524,8 +524,39 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
+        protected void SleepDetailsButton_Click(object sender, EventArgs e)
+        {
+            TriggersPanelLabel.Visible = true;
+            SleepDropDownList.Visible = true;
+            AddSleepButton.Visible = true;
+           // FoodDropDownList.Visible = true;
+           //  AddFoodsButton.Visible = true;
+          //  DrinksDropDownList.Visible = true;
+           //  AddDrinksButton.Visible = true;
 
+            SymptomsLabel.Visible = false;
+            SymptomsDropDownList.Visible = false;
+            AddSymptomButton.Visible = false;
+        }
 
+        protected void SleepDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
 
+        }
+
+        protected void QuantityDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void HoursDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void DrinksDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
