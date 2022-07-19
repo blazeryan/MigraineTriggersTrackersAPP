@@ -114,13 +114,13 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.SqlDataSource SymptomsDataSource;
 
         /// <summary>
-        /// InputSleepButton control.
+        /// SleepDetailsButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button InputSleepButton;
+        protected global::System.Web.UI.WebControls.Button SleepDetailsButton;
 
         /// <summary>
         /// TriggersPanelLabel control.
@@ -157,6 +157,15 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource HoursDataSource;
+
+        /// <summary>
+        /// DrinkDetailsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button DrinkDetailsButton;
 
         /// <summary>
         /// QuantityDropDownLabel control.
@@ -355,6 +364,15 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddSleepButton;
+
+        /// <summary>
+        /// FoodDetailsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button FoodDetailsButton;
 
         /// <summary>
         /// AddFoodsButton control.

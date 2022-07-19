@@ -558,5 +558,15 @@ namespace MigraineTriggersTrackersAPP
         {
 
         }
+
+        protected void SleepDataSource_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
+
+        protected void FoodDetailsButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
