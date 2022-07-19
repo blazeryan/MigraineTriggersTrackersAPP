@@ -529,14 +529,14 @@ namespace MigraineTriggersTrackersAPP
             TriggersPanelLabel.Visible = true;
             SleepDropDownList.Visible = true;
             AddSleepButton.Visible = true;
-           // FoodDropDownList.Visible = true;
-           //  AddFoodsButton.Visible = true;
-          //  DrinksDropDownList.Visible = true;
-           //  AddDrinksButton.Visible = true;
+          
+         
 
             SymptomsLabel.Visible = false;
             SymptomsDropDownList.Visible = false;
             AddSymptomButton.Visible = false;
+            FoodDropDownList.Visible = false;
+            AddFoodsButton.Visible = false;
         }
 
         protected void SleepDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -566,7 +566,27 @@ namespace MigraineTriggersTrackersAPP
 
         protected void FoodDetailsButton_Click(object sender, EventArgs e)
         {
+            FoodDropDownList.Visible = true;
+            AddFoodsButton.Visible = true;
 
+            
+            SleepDropDownList.Visible = false;
+            AddSleepButton.Visible = false;
+        
+        }
+
+        protected void QuantityDataSource_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+           
+        }
+
+        protected void DrinkDetailsButton_Click(object sender, EventArgs e)
+        {
+            DrinksDropDownList.Visible = true;
+            AddDrinksButton.Visible = true;
+
+            FoodDropDownList.Visible = false;
+            AddFoodsButton.Visible = false;
         }
     }
 }

@@ -44,7 +44,7 @@
             <asp:ListItem>Time</asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="HoursDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [hours_number] FROM [hours]"></asp:SqlDataSource>
-        <asp:Button ID="DrinkDetailsButton" runat="server" style="z-index: 4; left: 49px; top: 276px; position: absolute; width: 130px;" Text="Drink Details &gt;&gt;" />
+        <asp:Button ID="DrinkDetailsButton" runat="server" style="z-index: 4; left: 49px; top: 276px; position: absolute; width: 130px;" Text="Drink Details &gt;&gt;" OnClick="DrinkDetailsButton_Click" />
         <asp:Label ID="QuantityDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 472px; top: 264px; position: absolute" Text="Quantity"></asp:Label>
         <asp:DropDownList ID="MinutesDropDownList" runat="server" AutoPostBack="True" DataSourceID="MinutesDataSource" DataTextField="minutes_number" DataValueField="minutes_number" style="z-index: 1; left: 467px; top: 156px; position: absolute; width: 105px;">
         </asp:DropDownList>
@@ -71,7 +71,7 @@
             <asp:ListItem>Quantity</asp:ListItem>
         </asp:DropDownList>
         
-        <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]" OnSelecting="QuantityDataSource_Selecting1"></asp:SqlDataSource>
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 447px; top: 425px; position: absolute; width: 544px; height: 229px;" OnTextChanged="NotesTextBox_TextChanged"></asp:TextBox>
         <asp:Button ID="HistoryButton" runat="server" style="z-index: 1; left: 650px; top: 279px; position: absolute; width: 133px; right: 457px;" Text="History" Font-Bold="True" BackColor="#FFCC66" />
@@ -88,7 +88,7 @@
         <asp:Button ID="AddSleepButton" runat="server" style="z-index: 1; left: 256px; top: 117px; position: absolute; width: 130px;" Text="ADD SLEEP" OnClick="AddSleepButton_Click" Font-Bold="True" Visible="False" />
         <asp:Button ID="FoodDetailsButton" runat="server" OnClick="FoodDetailsButton_Click" style="z-index: 1; left: 48px; top: 314px; position: absolute; width: 130px" Text="Food Details &gt;&gt;" />
         <asp:Button ID="AddFoodsButton" runat="server" style="z-index: 1; left: 258px; top: 203px; position: absolute; width: 130px" Text="ADD FOODS" Font-Bold="True" OnClick="AddFoodsButton_Click" Visible="False" />
-        <asp:Button ID="AddDrinksButton" runat="server" Text="ADD DRINKS" Font-Bold="True" style="z-index: 1; left: 258px; position: absolute; width: 130px;" OnClick="AddDrinksButton_Click" Visible="False" />
+        <asp:Button ID="AddDrinksButton" runat="server" Text="ADD DRINKS" Font-Bold="True" style="z-index: 1; left: 258px; position: absolute; width: 130px; top: 292px;" OnClick="AddDrinksButton_Click" Visible="False" />
         <asp:Label ID="NotesLabel" runat="server" Font-Bold="True" style="z-index: 1; left: 450px; top: 400px; position: absolute" Text="Notes" ForeColor="#003399"></asp:Label>
         <asp:Label ID="DetailLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 55px; top: 400px; position: absolute; width: 58px" Text="Detail"></asp:Label>
         <asp:DropDownList ID="SleepDropDownList" runat="server" style="z-index: 1; left: 254px; top: 82px; position: absolute; width: 130px; right: 856px; margin-bottom: 0px;" DataSourceID="SleepDataSource" DataTextField="sleep_name" DataValueField="sleep_name" AutoPostBack="True" OnSelectedIndexChanged="SleepDropDownList_SelectedIndexChanged1" Visible="False">
