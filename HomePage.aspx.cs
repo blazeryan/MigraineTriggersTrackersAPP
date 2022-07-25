@@ -71,7 +71,12 @@ namespace MigraineTriggersTrackersAPP
 
             // Associate the insert command
             adapter.InsertCommand = new SqlCommand(sql2, cnn);
-           // adapter.InsertCommand.ExecuteNonQuery();
+            // adapter.InsertCommand.ExecuteNonQuery();
+
+            // Load GridView Data
+            DetailsGridView.DataSource = GridViewDataSource;
+            DetailsGridView.DataBind();
+
 
             // Close all objects
             command2.Dispose();
@@ -555,7 +560,9 @@ namespace MigraineTriggersTrackersAPP
             //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
             //adapter3.InsertCommand.ExecuteNonQuery();
 
-
+            // Bind Gridview on button click or get new data from table and display in gridview
+                DetailsGridView.DataSource = GridViewDataSource;
+                DetailsGridView.DataBind();
 
 
 
