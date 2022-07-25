@@ -96,6 +96,7 @@
         <asp:Label ID="SymptomLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Symptoms"></asp:Label>
         <asp:SqlDataSource ID="SleepDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [sleep_name] FROM [sleep]" OnSelecting="SleepDataSource_Selecting2"></asp:SqlDataSource>
         <asp:Label ID="NotesListBoxLabel" runat="server" style="z-index: 1; left: 481px; top: 400px; position: absolute" Text="Notes" Font-Bold="True" ForeColor="#003399"></asp:Label>
+        <asp:Label ID="SleepDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Sleep"></asp:Label>
         <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 681px; position: absolute; height: 735px; width: 584px; margin-right: 178px; margin-top: 0px;">
             <Columns>
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
