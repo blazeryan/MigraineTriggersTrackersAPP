@@ -37,7 +37,7 @@
         </asp:Panel>
         <asp:SqlDataSource ID="SymptomsDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [symptom_name] FROM [symptom]" OnSelecting="SymptomsDataSource_Selecting"></asp:SqlDataSource>
         <asp:Button ID="SleepDetailsButton" runat="server" OnClick="SleepDetailsButton_Click" style="z-index: 4; left: 255px; top: 350px; position: absolute; width: 130px" Text="Sleep Details &gt;&gt;" BackColor="#FFCC66" Font-Bold="True" Visible="False" />
-        <asp:Label ID="TriggersPanelLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 70px; top: 25px; position: absolute" Text="Triggers" Font-Italic="True" Visible="False"></asp:Label>
+        <asp:Label ID="TriggersPanelLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 70px; top: 25px; position: absolute" Text="Triggers" Font-Italic="True"></asp:Label>
         <asp:Panel ID="PropertiesPanel" runat="server" BackColor="#0066FF" style="z-index: 1; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
         </asp:Panel>
         <asp:DropDownList ID="HoursDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 265px; top: 81px; position: absolute; width: 105px;" OnSelectedIndexChanged="HoursDropDownList_SelectedIndexChanged1" DataSourceID="HoursDataSource" DataTextField="hours_number" DataValueField="hours_number">
@@ -51,7 +51,6 @@
         <asp:SqlDataSource ID="MinutesDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [minutes_number] FROM [minutes]" OnSelecting="MinutesDataSource_Selecting"></asp:SqlDataSource>
         <asp:Panel ID="SymptomsPanel" runat="server" BackColor="#0066FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" style="z-index: 0; left: 25px; top: 17px; position: absolute; height: 370px; width: 177px">
         </asp:Panel>
-        <asp:Label ID="SymptomsLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 70px; top: 25px; position: absolute" Text="Symptoms" Font-Italic="True"></asp:Label>
         <asp:Label ID="IntensityDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 265px; position: absolute; right: 696px; top: 179px;" Text="Intensity"></asp:Label>
         <asp:ListBox ID="IntensityListBox" runat="server" AutoPostBack="True" style="z-index: 3; left: 244px; top: 426px; position: absolute; height: 229px; width: 137px"></asp:ListBox>
         <asp:DropDownList ID="IntensityDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 265px; top: 202px; position: absolute; width: 105px;" OnSelectedIndexChanged="IntensityDropDownList_SelectedIndexChanged1" DataSourceID="IntensityDataSource" DataTextField="intensity_number" DataValueField="intensity_number">
@@ -96,7 +95,10 @@
         <asp:Label ID="SymptomLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Symptoms"></asp:Label>
         <asp:SqlDataSource ID="SleepDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [sleep_name] FROM [sleep]" OnSelecting="SleepDataSource_Selecting2"></asp:SqlDataSource>
         <asp:Label ID="NotesListBoxLabel" runat="server" style="z-index: 1; left: 481px; top: 400px; position: absolute" Text="Notes" Font-Bold="True" ForeColor="#003399"></asp:Label>
-        <asp:Label ID="SleepDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Sleep"></asp:Label>
+        <asp:Label ID="SleepDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Sleep" Visible="False"></asp:Label>
+        <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Food" Visible="False"></asp:Label>
+        <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Drink" Visible="False"></asp:Label>
+
         <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 681px; position: absolute; height: 735px; width: 584px; margin-right: 178px; margin-top: 0px;">
             <Columns>
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
