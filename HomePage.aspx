@@ -57,7 +57,7 @@
             <asp:ListItem Value="Intensity"></asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="IntensityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [intensity_number] FROM [intensity]" OnSelecting="IntensityDataSource_Selecting"></asp:SqlDataSource>
-        <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 450px; top: 457px; position: absolute; width: 130px;" Text="Remove Last" Font-Bold="True" BackColor="#FFCC66" />
+        <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 22px; top: 660px; position: absolute; width: 130px; right: 1088px;" Text="Remove Last" Font-Bold="True" BackColor="#FFCC66" />
         <asp:Panel ID="DatePanel" runat="server" BackColor="#0066FF" style="z-index: 1; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
             <asp:Label ID="DatePanelLabel" runat="server" style="z-index: 0; left: 66px; top: 3px; position: absolute" Text="Date" Font-Bold="True" Font-Italic="True" ForeColor="White"></asp:Label>
         </asp:Panel>
@@ -99,7 +99,7 @@
         <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Food" Visible="False"></asp:Label>
         <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Drink" Visible="False"></asp:Label>
 
-        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 681px; position: absolute; height: 735px; width: 584px; margin-right: 178px; margin-top: 0px;">
+        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 705px; position: absolute; height: 735px; width: 584px; margin-right: 178px; margin-top: 0px;">
             <Columns>
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
@@ -110,7 +110,7 @@
         </asp:GridView>
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes] FROM [details]"></asp:SqlDataSource>
-        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 623px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
+        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged"></asp:TextBox>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 359px; top: 400px; position: absolute; right: 806px;" Text="Quantity"></asp:Label>

@@ -130,6 +130,13 @@ namespace MigraineTriggersTrackersAPP
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
+            // Add text from NoesTextBox to NotesListBox
+            NotesListBox.Items.Add(NotesTextBox.Text.ToString());
+
+            // Clear Text from NotesTextBox
+            NotesTextBox.Text = "";
+
+
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
             IntensityDropDownList.SelectedIndex = 0;
@@ -188,6 +195,12 @@ namespace MigraineTriggersTrackersAPP
             MigraineListBox.Items.Add(SleepDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Add text from NoesTextBox to NotesListBox
+            NotesListBox.Items.Add(NotesTextBox.Text.ToString());
+
+            // Clear Text from NotesTextBox
+            NotesTextBox.Text = "";
 
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
@@ -369,6 +382,12 @@ namespace MigraineTriggersTrackersAPP
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
+            // Add text from NoesTextBox to NotesListBox
+            NotesListBox.Items.Add(NotesTextBox.Text.ToString());
+
+            // Clear Text from NotesTextBox
+            NotesTextBox.Text = "";
+
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
             HoursDropDownList.SelectedIndex = 0;
@@ -392,6 +411,12 @@ namespace MigraineTriggersTrackersAPP
             TimeListBox.Items.Add(HoursDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
+
+            // Add text from NoesTextBox to NotesListBox
+            NotesListBox.Items.Add(NotesTextBox.Text.ToString());
+
+            // Clear Text from NotesTextBox
+            NotesTextBox.Text = "";
 
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
@@ -503,36 +528,39 @@ namespace MigraineTriggersTrackersAPP
                 //Response.Write(quantityListBoxItem.ToString());
                 Debug.Write(quantityListBoxItem.ToString());
 
-                sql3 = string.Format("INSERT INTO details (migraine_detail, time, quantity, intensity) VALUES ('{0}', '{1}', '{2}', '{3}' )",
-                migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, i);
+                var notesListBoxItem = NotesListBox.Items[i];
+                Debug.Write(notesListBoxItem.ToString());
+
+                sql3 = string.Format("INSERT INTO details (migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}' )",
+                migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
 
                 command3 = new SqlCommand(sql3, cnn);
 
                 // Associate the insert command
                 adapter3.InsertCommand = new SqlCommand(sql3, cnn);
                 adapter3.InsertCommand.ExecuteNonQuery();
-
+                
             }
 
-            // Get NotesTextBox text
-            var NotesTexBoxItem = NotesTextBox.Text;
-            // Insert Notes from NotesTextBox into notes column in migraine table
-            sql3 = string.Format("INSERT INTO details (notes) VALUES ('{0}')", NotesTexBoxItem);
+            //// Get NotesTextBox text
+            //var NotesTexBoxItem = NotesTextBox.Text;
+            //// Insert Notes from NotesTextBox into notes column in migraine table
+            //sql3 = string.Format("INSERT INTO details (notes) VALUES ('{0}')", NotesTexBoxItem);
 
 
-              // Define the sql command
-              command3 = new SqlCommand(sql3, cnn);
+            //  // Define the sql command
+            //  command3 = new SqlCommand(sql3, cnn);
 
-            // Associate the insert command
-            adapter3.InsertCommand = new SqlCommand(sql3, cnn);
-            adapter3.InsertCommand.ExecuteNonQuery();
+            //// Associate the insert command
+            //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
+            //adapter3.InsertCommand.ExecuteNonQuery();
 
 
 
 
 
             // Close all objects
-            command3.Dispose();
+            //command3.Dispose();
             cnn.Close();
         }
 
