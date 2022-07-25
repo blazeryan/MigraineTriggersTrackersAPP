@@ -58,7 +58,7 @@
             <asp:ListItem Value="Intensity"></asp:ListItem>
         </asp:DropDownList>
         <asp:SqlDataSource ID="IntensityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [intensity_number] FROM [intensity]" OnSelecting="IntensityDataSource_Selecting"></asp:SqlDataSource>
-        <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 51px; top: 674px; position: absolute" Text="Remove Last" Font-Bold="True" />
+        <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 450px; top: 457px; position: absolute; width: 130px;" Text="Remove Last" Font-Bold="True" BackColor="#FFCC66" />
         <asp:Panel ID="DatePanel" runat="server" BackColor="#0066FF" style="z-index: 1; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
             <asp:Label ID="DatePanelLabel" runat="server" style="z-index: 0; left: 66px; top: 3px; position: absolute" Text="Date" Font-Bold="True" Font-Italic="True" ForeColor="White"></asp:Label>
         </asp:Panel>
@@ -105,7 +105,7 @@
             </Columns>
         </asp:GridView>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes] FROM [details]"></asp:SqlDataSource>
-        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 438px; top: 675px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
+        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 623px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged"></asp:TextBox>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 313px; top: 400px; position: absolute" Text="Quantity"></asp:Label>
