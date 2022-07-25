@@ -321,15 +321,6 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.SqlDataSource QuantityDataSource;
 
         /// <summary>
-        /// NotesTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox NotesTextBox;
-
-        /// <summary>
         /// HistoryButton control.
         /// </summary>
         /// <remarks>
@@ -346,15 +337,6 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
-
-        /// <summary>
-        /// SubmitButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button SubmitButton;
 
         /// <summary>
         /// AddSleepButton control.
@@ -429,6 +411,15 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.Label HoursLabel;
 
         /// <summary>
+        /// SymptomLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label SymptomLabel;
+
+        /// <summary>
         /// SleepDataSource control.
         /// </summary>
         /// <remarks>
@@ -454,6 +445,24 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.SqlDataSource GridViewDataSource;
+
+        /// <summary>
+        /// SubmitButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SubmitButton;
+
+        /// <summary>
+        /// NotesTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NotesTextBox;
 
         /// <summary>
         /// QuantityLabel control.

@@ -609,5 +609,10 @@ namespace MigraineTriggersTrackersAPP
             FoodDetailsButton.Visible = true;   
 
         }
+
+        protected void IntensityDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
+        }
     }
 }
