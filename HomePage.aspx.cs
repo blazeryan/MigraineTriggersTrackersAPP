@@ -138,6 +138,9 @@ namespace MigraineTriggersTrackersAPP
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
 
+            // Show SleepDetailsButton
+            SleepDetailsButton.Visible = true;
+
             string hoursSelected = "NA";
             string minutesSelected = "NA";
             string hoursAndMinutes = "NA";
@@ -369,6 +372,10 @@ namespace MigraineTriggersTrackersAPP
             FoodDropDownList.SelectedIndex = 0;
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
+
+            // Show Drink Details Button
+            SleepDetailsButton.Visible = false;
+            DrinkDetailsButton.Visible= true;
         }
 
         protected void AddDrinksButton_Click(object sender, EventArgs e)
