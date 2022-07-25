@@ -99,7 +99,7 @@
         <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Food" Visible="False"></asp:Label>
         <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Drink" Visible="False"></asp:Label>
 
-        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 705px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF">
+        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 629px; top: 17px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
             <AlternatingRowStyle BackColor="#0066FF" />
             <Columns>
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
@@ -108,7 +108,7 @@
                 <asp:BoundField DataField="intensity" HeaderText="intensity" SortExpression="intensity" />
                 <asp:BoundField DataField="notes" HeaderText="notes" SortExpression="notes" />
             </Columns>
-            <HeaderStyle Height="50px" BackColor="#0066FF" />
+            <HeaderStyle Height="20px" BackColor="#0066FF" ForeColor="White" />
             <FooterStyle BackColor="#0066FF" />
             <RowStyle Height="1px" />
         </asp:GridView>
