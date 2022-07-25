@@ -99,7 +99,8 @@
         <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Food" Visible="False"></asp:Label>
         <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute" Text="Drink" Visible="False"></asp:Label>
 
-        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 705px; position: absolute; height: 735px; width: 584px; margin-right: 178px; margin-top: 0px;">
+        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False" DataSourceID="GridViewDataSource" OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 25px; top: 705px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF">
+            <AlternatingRowStyle BackColor="#0066FF" />
             <Columns>
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
@@ -107,6 +108,9 @@
                 <asp:BoundField DataField="intensity" HeaderText="intensity" SortExpression="intensity" />
                 <asp:BoundField DataField="notes" HeaderText="notes" SortExpression="notes" />
             </Columns>
+            <HeaderStyle Height="50px" BackColor="#0066FF" />
+            <FooterStyle BackColor="#0066FF" />
+            <RowStyle Height="1px" />
         </asp:GridView>
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes] FROM [details]"></asp:SqlDataSource>
