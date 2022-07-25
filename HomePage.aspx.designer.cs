@@ -429,6 +429,15 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.SqlDataSource SleepDataSource;
 
         /// <summary>
+        /// NotesListBoxLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NotesListBoxLabel;
+
+        /// <summary>
         /// DetailsGridView control.
         /// </summary>
         /// <remarks>
@@ -436,6 +445,15 @@ namespace MigraineTriggersTrackersAPP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView DetailsGridView;
+
+        /// <summary>
+        /// NotesListBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox NotesListBox;
 
         /// <summary>
         /// GridViewDataSource control.
