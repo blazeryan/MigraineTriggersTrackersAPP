@@ -73,26 +73,13 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.DataSource = GridViewDataSource;
             DetailsGridView.DataBind();
 
-
             // GetTodays Date
             DateTime todaysDateTime = DateTime.Now;
             Response.Write(todaysDateTime.ToString());
 
-
-
-
-
-
-
             // Close all objects
             command2.Dispose();
             cnn.Close();
-
-
-
-
-
-
 
         }
 
@@ -147,7 +134,6 @@ namespace MigraineTriggersTrackersAPP
             // Clear Text from NotesTextBox
             NotesTextBox.Text = "";
 
-
             // Reset DropDownLists to Index 0 or NA
             SymptomsDropDownList.SelectedIndex = 0;
             IntensityDropDownList.SelectedIndex = 0;
@@ -196,12 +182,10 @@ namespace MigraineTriggersTrackersAPP
             HoursDropDownList.SelectedIndex = 0;
             MinutesDropDownList.SelectedIndex = 0;
 
-
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
         {
-
 
             MigraineListBox.Items.Add(SleepDropDownList.SelectedItem.ToString());
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
@@ -354,7 +338,6 @@ namespace MigraineTriggersTrackersAPP
             SleepDetailsButton.Visible = false;
             DrinkDetailsButton.Visible = true;
 
-
         }
 
         protected void AddDrinksButton_Click(object sender, EventArgs e)
@@ -380,7 +363,6 @@ namespace MigraineTriggersTrackersAPP
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
 
-
         }
 
 
@@ -397,10 +379,6 @@ namespace MigraineTriggersTrackersAPP
 
 
         }
-
-
-
-
 
         protected void MinutesDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -510,6 +488,14 @@ namespace MigraineTriggersTrackersAPP
             // Close all objects
             //command3.Dispose();
             cnn.Close();
+
+            // clear all ListBoxItems
+            MigraineListBox.Items.Clear();
+            TimeListBox.Items.Clear();
+            IntensityListBox.Items.Clear();
+            QuantityListBox.Items.Clear();  
+            NotesListBox.Items.Clear();
+            
         }
 
         protected void DetailsGridView_SelectedIndexChanged(object sender, EventArgs e)
