@@ -102,18 +102,20 @@
         <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False"  OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 629px; top: 17px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
             <AlternatingRowStyle BackColor="#0066FF" />
             <Columns>
+                <asp:CommandField ShowSelectButton="True" />
                 <asp:BoundField DataField="migraine_detail" HeaderText="migraine_detail" SortExpression="migraine_detail" />
                 <asp:BoundField DataField="time" HeaderText="time" SortExpression="time" />
                 <asp:BoundField DataField="quantity" HeaderText="quantity" SortExpression="quantity" />
                 <asp:BoundField DataField="intensity" HeaderText="intensity" SortExpression="intensity" />
                 <asp:BoundField DataField="notes" HeaderText="notes" SortExpression="notes" />
+                <asp:BoundField DataField="date" HeaderText="date" SortExpression="date" />
             </Columns>
             <HeaderStyle Height="20px" BackColor="#0066FF" ForeColor="White" />
             <FooterStyle BackColor="#0066FF" />
             <RowStyle Height="1px" />
         </asp:GridView>
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
-        <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes] FROM [details]"></asp:SqlDataSource>
+        <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes], [date] FROM [details]"></asp:SqlDataSource>
         <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px"></asp:TextBox>

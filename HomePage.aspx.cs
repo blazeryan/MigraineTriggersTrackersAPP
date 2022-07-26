@@ -78,6 +78,16 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.DataBind();
 
 
+            // GetTodays Date
+            DateTime todaysDateTime = DateTime.Now;
+            Response.Write(todaysDateTime.ToString());
+
+
+
+            
+
+
+
             // Close all objects
             command2.Dispose();
             cnn.Close();
@@ -126,7 +136,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
@@ -517,6 +527,10 @@ namespace MigraineTriggersTrackersAPP
             System.Collections.IList list = MigraineListBox.Items;
             for (int i = 0; i < list.Count; i++)
             {
+                // GetTodays Date
+                DateTime todaysDateTime = DateTime.Now;
+                Debug.Write(todaysDateTime.ToString());
+
                 var migraineItem = list[i];
                 //Response.Write(migraineItem.ToString());
                 Debug.Write(migraineItem.ToString());
@@ -536,8 +550,11 @@ namespace MigraineTriggersTrackersAPP
                 var notesListBoxItem = NotesListBox.Items[i];
                 Debug.Write(notesListBoxItem.ToString());
 
-                sql3 = string.Format("INSERT INTO details (migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}' )",
-                migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
+           
+              
+
+                sql3 = string.Format("INSERT INTO details (date, migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}' )",
+                todaysDateTime, migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
 
                 command3 = new SqlCommand(sql3, cnn);
 
