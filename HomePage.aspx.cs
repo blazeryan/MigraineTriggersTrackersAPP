@@ -62,10 +62,6 @@ namespace MigraineTriggersTrackersAPP
             SqlDataAdapter adapter = new SqlDataAdapter();
             String sql2 = "";
 
-            // Define insert statement
-           
-            // Insert Static Data into Tables
-            // sql2 = "INSERT INTO migraine (migraine_detail, time, quantity, intensity) VALUES('Santa' , '5 hr & 4 min' , '8' , '69')";
             // Define the sql command
             command2 = new SqlCommand(sql2, cnn);
 
@@ -84,7 +80,7 @@ namespace MigraineTriggersTrackersAPP
 
 
 
-            
+
 
 
 
@@ -136,7 +132,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
@@ -200,7 +196,7 @@ namespace MigraineTriggersTrackersAPP
             HoursDropDownList.SelectedIndex = 0;
             MinutesDropDownList.SelectedIndex = 0;
 
-  
+
         }
 
         protected void AddSleepButton_Click(object sender, EventArgs e)
@@ -262,65 +258,6 @@ namespace MigraineTriggersTrackersAPP
 
             // Add total time to list box
             TimeListBox.Items.Add(hoursAndMinutes);
-
-
-
-
-            //double hoursSelectedToInt = 0;
-            //double minutesSelectedToInt = 0;
-            //double totalMinutes = 0;
-
-            // Convert Selected DropDown Hours to Minutes 
-
-            //if (HoursDropDownList.SelectedIndex != 0)
-            //{
-            //    hoursSelected = HoursDropDownList.SelectedValue.ToString();
-            //}
-
-            //if (MinutesDropDownList.SelectedIndex != 0)
-            //{
-            //    minutesSelected = MinutesDropDownList.SelectedValue.ToString();
-            //}
-
-            //if (hoursSelected != "NA")
-            //{
-            //    hoursSelectedToInt = Convert.ToDouble(hoursSelected);
-            //}
-
-            //if (hoursSelected != "NA")
-            //{
-            //    hoursSelectedToInt = hoursSelectedToInt * 60;
-            //}
-
-            //if (minutesSelected != "NA")
-            //{
-            //    minutesSelectedToInt = Convert.ToDouble(minutesSelected);
-
-            //}
-
-            //if (hoursSelectedToInt != 0)
-            //{ 
-            //       totalMinutes = hoursSelectedToInt;
-            //}
-
-            //// add Converted minutes to Selected Minutes
-            //if (minutesSelectedToInt != 0)
-            //{
-            //        totalMinutes = totalMinutes + minutesSelectedToInt;
-            //}
-
-            //// Left off here!!!!!!!!!!!!!!!!!
-            ///////////////////////////////////////////////////////////////////////////////////////////
-            /////
-            //// Convert Total Minutes to Hours & Minutes
-            //double hoursAndMinutes = (totalMinutes % 60) / 60;
-
-
-
-
-
-            // TimeListBox.Items.Add(hoursAndMinutes.ToString());
-            // TimeListBox.Items.Add(totalMinutes.ToString());
 
             // Reset Hours and Minutes DropDownLists after Selected Hours & Times have been populated onto List Box
             HoursDropDownList.SelectedIndex = 0;
@@ -415,9 +352,9 @@ namespace MigraineTriggersTrackersAPP
 
             // Show Drink Details Button
             SleepDetailsButton.Visible = false;
-            DrinkDetailsButton.Visible= true;
+            DrinkDetailsButton.Visible = true;
 
-       
+
         }
 
         protected void AddDrinksButton_Click(object sender, EventArgs e)
@@ -443,7 +380,7 @@ namespace MigraineTriggersTrackersAPP
             SleepDropDownList.SelectedIndex = 0;
             DrinksDropDownList.SelectedIndex = 0;
 
-     
+
         }
 
 
@@ -522,7 +459,7 @@ namespace MigraineTriggersTrackersAPP
             SqlDataAdapter adapter3 = new SqlDataAdapter();
             String sql3 = "";
 
-     
+
 
             System.Collections.IList list = MigraineListBox.Items;
             for (int i = 0; i < list.Count; i++)
@@ -550,8 +487,8 @@ namespace MigraineTriggersTrackersAPP
                 var notesListBoxItem = NotesListBox.Items[i];
                 Debug.Write(notesListBoxItem.ToString());
 
-           
-              
+
+
 
                 sql3 = string.Format("INSERT INTO details (date, migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}' )",
                 todaysDateTime, migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
@@ -561,25 +498,12 @@ namespace MigraineTriggersTrackersAPP
                 // Associate the insert command
                 adapter3.InsertCommand = new SqlCommand(sql3, cnn);
                 adapter3.InsertCommand.ExecuteNonQuery();
-                
+
             }
 
-            //// Get NotesTextBox text
-            //var NotesTexBoxItem = NotesTextBox.Text;
-            //// Insert Notes from NotesTextBox into notes column in migraine table
-            //sql3 = string.Format("INSERT INTO details (notes) VALUES ('{0}')", NotesTexBoxItem);
-
-
-            //  // Define the sql command
-            //  command3 = new SqlCommand(sql3, cnn);
-
-            //// Associate the insert command
-            //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
-            //adapter3.InsertCommand.ExecuteNonQuery();
-
             // Bind Gridview on button click or get new data from table and display in gridview
-                DetailsGridView.DataSource = GridViewDataSource;
-                DetailsGridView.DataBind();
+            DetailsGridView.DataSource = GridViewDataSource;
+            DetailsGridView.DataBind();
 
 
 
@@ -598,8 +522,8 @@ namespace MigraineTriggersTrackersAPP
             TriggersPanelLabel.Visible = true;
             SleepDropDownList.Visible = true;
             AddSleepButton.Visible = true;
-          
-         
+
+
 
             SymptomsDropDownList.Visible = false;
             AddSymptomButton.Visible = false;
@@ -643,7 +567,7 @@ namespace MigraineTriggersTrackersAPP
             FoodDetailsButton.Visible = false;
             DrinkDetailsButton.Visible = true;
 
-            
+
             SleepDropDownList.Visible = false;
             AddSleepButton.Visible = false;
             SleepDetailsButton.Visible = false;
@@ -655,14 +579,14 @@ namespace MigraineTriggersTrackersAPP
 
         protected void QuantityDataSource_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
         {
-           
+
         }
 
         protected void DrinkDetailsButton_Click(object sender, EventArgs e)
         {
             DrinksDropDownList.Visible = true;
             AddDrinksButton.Visible = true;
-            FoodDetailsButton.Visible=false;
+            FoodDetailsButton.Visible = false;
             DrinkDetailsButton.Visible = false;
 
             FoodDropDownList.Visible = false;
@@ -675,8 +599,8 @@ namespace MigraineTriggersTrackersAPP
 
         protected void SleepDataSource_Selecting2(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            SleepDetailsButton.Visible = false; 
-            FoodDetailsButton.Visible = true;   
+            SleepDetailsButton.Visible = false;
+            FoodDetailsButton.Visible = true;
 
         }
 
