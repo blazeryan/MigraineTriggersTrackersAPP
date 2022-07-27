@@ -73,6 +73,14 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.DataSource = GridViewDataSource;
             DetailsGridView.DataBind();
 
+            DetailsGridView.HeaderRow.Cells[0].Text = "";
+            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
+
             // GetTodays Date
             DateTime todaysDateTime = DateTime.Now;
             Response.Write(todaysDateTime.ToString());
@@ -137,13 +145,13 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.DataSource = r;
             DetailsGridView.DataBind();
 
-            DetailsGridView.HeaderRow.Cells[0].Text = "Date";
+            DetailsGridView.HeaderRow.Cells[0].Text = "";
             DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
             DetailsGridView.HeaderRow.Cells[2].Text = "Time";
             DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
             DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
             DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
-
+            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
 
             // Associate the insert command
             //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
@@ -514,6 +522,14 @@ namespace MigraineTriggersTrackersAPP
             // Bind Gridview on button click or get new data from table and display in gridview
             DetailsGridView.DataSource = GridViewDataSource;
             DetailsGridView.DataBind();
+
+            DetailsGridView.HeaderRow.Cells[0].Text = "";
+            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
 
             // Close all objects
             //command3.Dispose();

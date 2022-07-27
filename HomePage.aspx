@@ -72,7 +72,6 @@
         
         <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]" OnSelecting="QuantityDataSource_Selecting1"></asp:SqlDataSource>
         
-        <asp:Button ID="HistoryButton" runat="server" style="z-index: 1; left: 450px; top: 305px; position: absolute; width: 133px; right: 658px;" Text="History" Font-Bold="True" BackColor="#FFCC66" />
         <asp:Calendar ID="Calendar1" runat="server" style="z-index: 5; left: 444px; top: 60px; position: absolute; height: 106px; width: 84px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True">
             <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
             <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
