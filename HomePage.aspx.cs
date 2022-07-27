@@ -83,7 +83,6 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
-
         protected void TimeDropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -94,7 +93,6 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
-
         protected void FoodDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -104,13 +102,10 @@ namespace MigraineTriggersTrackersAPP
 
         }
 
-
-
         protected void DrinksDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
 
         protected void QuantityDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -120,6 +115,43 @@ namespace MigraineTriggersTrackersAPP
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
 
+            // Variable declaration
+            string connectionString;
+            SqlConnection cnn;
+
+            // Set connection string
+            connectionString = "Data Source=(local);Initial Catalog=MigraineTriggersTrackersDB;Integrated Security=True";
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+
+            string sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day +"'";
+
+            SqlCommand command3;
+            SqlDataAdapter adapter3 = new SqlDataAdapter();
+           
+
+            command3 = new SqlCommand(sql, cnn);
+            SqlDataReader r = command3.ExecuteReader();
+            DetailsGridView.DataSource = r;
+            DetailsGridView.DataBind();
+
+            DetailsGridView.HeaderRow.Cells[0].Text = "Date";
+            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+
+
+            // Associate the insert command
+            //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
+            // adapter3.InsertCommand.ExecuteNonQuery();
+
+            // Close all objects
+            //command3.Dispose();
+            cnn.Close();
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
@@ -483,8 +515,6 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.DataSource = GridViewDataSource;
             DetailsGridView.DataBind();
 
-
-
             // Close all objects
             //command3.Dispose();
             cnn.Close();
@@ -508,8 +538,6 @@ namespace MigraineTriggersTrackersAPP
             TriggersPanelLabel.Visible = true;
             SleepDropDownList.Visible = true;
             AddSleepButton.Visible = true;
-
-
 
             SymptomsDropDownList.Visible = false;
             AddSymptomButton.Visible = false;
