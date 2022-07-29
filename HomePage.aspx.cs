@@ -41,13 +41,11 @@ namespace MigraineTriggersTrackersAPP
             dataReader = command.ExecuteReader();
 
 
-
             // Get the table values from multiple table columns
             while (dataReader.Read())
             {
                 Output = Output + dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2) + " - " + dataReader.GetValue(3) + " - " + dataReader.GetValue(4) + dataReader.GetValue(5) + "</br>";
             }
-
 
             Response.Write(Output);
             dataReader.Close();
@@ -70,16 +68,17 @@ namespace MigraineTriggersTrackersAPP
             // adapter.InsertCommand.ExecuteNonQuery();
 
             // Load GridView Data
-            DetailsGridView.DataSource = GridViewDataSource;
-            DetailsGridView.DataBind();
+            //DetailsGridView.DataSource = GridViewDataSource;
+            //DetailsGridView.DataBind();
 
-            DetailsGridView.HeaderRow.Cells[0].Text = "";
-            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
-            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
-            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
-            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
-            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
-            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
+            // Place colomn names above gridview columns
+            //DetailsGridView.HeaderRow.Cells[0].Text = "";
+            //DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+            //DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+            //DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+            //DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+            //DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+            //DetailsGridView.HeaderRow.Cells[6].Text = "Date";
 
             // GetTodays Date
             DateTime todaysDateTime = DateTime.Now;
@@ -158,7 +157,7 @@ namespace MigraineTriggersTrackersAPP
             // adapter3.InsertCommand.ExecuteNonQuery();
 
             // Close all objects
-            //command3.Dispose();
+            command3.Dispose();
             cnn.Close();
         }
 
@@ -551,6 +550,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void SleepDetailsButton_Click(object sender, EventArgs e)
         {
+           SymptomsPanelLabel.Visible = false;
             TriggersPanelLabel.Visible = true;
             SleepDropDownList.Visible = true;
             AddSleepButton.Visible = true;
@@ -563,6 +563,7 @@ namespace MigraineTriggersTrackersAPP
             // Show SleepDropDown Label Dissapear Symptom Label
             SymptomLabel.Visible = false;
             SleepDropDownLabel.Visible = true;
+            
         }
 
         protected void SleepDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
