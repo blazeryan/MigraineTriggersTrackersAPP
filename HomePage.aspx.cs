@@ -148,7 +148,7 @@ namespace MigraineTriggersTrackersAPP
             // Display Column Data from Detail Table in GridView Only if There is Data to Show
             try
             {
-                
+                 // Provide User Feedback When There is No Data in Database for the Date Selected
                 NoDataOnDateLabel.Visible = false;
                 DetailsGridView.HeaderRow.Cells[0].Text = "";
                 DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
