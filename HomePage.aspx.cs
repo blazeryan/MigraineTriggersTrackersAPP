@@ -122,9 +122,6 @@ namespace MigraineTriggersTrackersAPP
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
 
-
-
-           
             // Variable declaration
             string connectionString;
             SqlConnection cnn;
@@ -135,23 +132,18 @@ namespace MigraineTriggersTrackersAPP
             cnn = new SqlConnection(connectionString);
             cnn.Open();
 
-
             // Get Data from Detail Table for Selected Date on Calendar Control
             string sql = null;
             sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
+            SqlCommand command3;
+            SqlDataAdapter adapter3 = new SqlDataAdapter();
 
-                // Calendar1.SelectedDate.Month + Calendar1.SelectedDate.Year +
+            command3 = new SqlCommand(sql, cnn);
+            SqlDataReader r = command3.ExecuteReader();
+            DetailsGridView.DataSource = r;
+            DetailsGridView.DataBind();
 
-
-                SqlCommand command3;
-                SqlDataAdapter adapter3 = new SqlDataAdapter();
-
-
-                command3 = new SqlCommand(sql, cnn);
-                SqlDataReader r = command3.ExecuteReader();
-                DetailsGridView.DataSource = r;
-                DetailsGridView.DataBind();
 
             // Display Column Data from Detail Table in GridView Only if There is Data to Show
             try
@@ -163,22 +155,20 @@ namespace MigraineTriggersTrackersAPP
                 DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
                 DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
                 DetailsGridView.HeaderRow.Cells[6].Text = "Date";
-                NoDataOnDateLabel.Visible = false;
+
             }
             catch (Exception ex)
             {
                 // Provide User Feedback When There is No Data in Database for the Date Selected
                 NoDataOnDateLabel.Visible = true;
-                
-            }
-                // Associate the insert command
-                //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
-                // adapter3.InsertCommand.ExecuteNonQuery();
 
-                // Close all objects
-                command3.Dispose();
-                cnn.Close();
-           
+            }
+
+            // Close all objects
+            command3.Dispose();
+            cnn.Close();
+
+
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
@@ -187,8 +177,10 @@ namespace MigraineTriggersTrackersAPP
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
-            // Add text from NoesTextBox to NotesListBox
+        
+              // Add text from NoesTextBox to NotesListBox
             NotesListBox.Items.Add(NotesTextBox.Text.ToString());
+            
 
             // Clear Text from NotesTextBox
             NotesTextBox.Text = "";
@@ -473,14 +465,14 @@ namespace MigraineTriggersTrackersAPP
             TimeListBox.Items.RemoveAt(TimeListBox.Items.Count - 1);
             IntensityListBox.Items.RemoveAt(IntensityListBox.Items.Count - 1);
             QuantityListBox.Items.RemoveAt(QuantityDropDownList.Items.Count - 1);
+            NotesListBox.Items.RemoveAt(NotesListBox.Items.Count - 1);
         }
 
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
 
-            //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-            //////////////////////Insert ListBox Items
-            /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            //Insert ListBox Items
 
             // Variable declaration
             string connectionString;
@@ -524,9 +516,6 @@ namespace MigraineTriggersTrackersAPP
                 var notesListBoxItem = NotesListBox.Items[i];
                 Debug.Write(notesListBoxItem.ToString());
 
-
-
-
                 sql3 = string.Format("INSERT INTO details (date, migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}' )",
                 todaysDateTime, migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
 
@@ -558,9 +547,9 @@ namespace MigraineTriggersTrackersAPP
             MigraineListBox.Items.Clear();
             TimeListBox.Items.Clear();
             IntensityListBox.Items.Clear();
-            QuantityListBox.Items.Clear();  
+            QuantityListBox.Items.Clear();
             NotesListBox.Items.Clear();
-            
+
         }
 
         protected void DetailsGridView_SelectedIndexChanged(object sender, EventArgs e)
@@ -570,7 +559,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void SleepDetailsButton_Click(object sender, EventArgs e)
         {
-           SymptomsPanelLabel.Visible = false;
+            SymptomsPanelLabel.Visible = false;
             TriggersPanelLabel.Visible = true;
             SleepDropDownList.Visible = true;
             AddSleepButton.Visible = true;
@@ -583,7 +572,7 @@ namespace MigraineTriggersTrackersAPP
             // Show SleepDropDown Label Dissapear Symptom Label
             SymptomLabel.Visible = false;
             SleepDropDownLabel.Visible = true;
-            
+
         }
 
         protected void SleepDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
