@@ -122,6 +122,9 @@ namespace MigraineTriggersTrackersAPP
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
 
+
+
+           
             // Variable declaration
             string connectionString;
             SqlConnection cnn;
@@ -133,32 +136,49 @@ namespace MigraineTriggersTrackersAPP
             cnn.Open();
 
 
-            string sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day +"'";
+            // Get Data from Detail Table for Selected Date on Calendar Control
+            string sql = null;
+            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
-            SqlCommand command3;
-            SqlDataAdapter adapter3 = new SqlDataAdapter();
+
+                // Calendar1.SelectedDate.Month + Calendar1.SelectedDate.Year +
+
+
+                SqlCommand command3;
+                SqlDataAdapter adapter3 = new SqlDataAdapter();
+
+
+                command3 = new SqlCommand(sql, cnn);
+                SqlDataReader r = command3.ExecuteReader();
+                DetailsGridView.DataSource = r;
+                DetailsGridView.DataBind();
+
+            // Display Column Data from Detail Table in GridView Only if There is Data to Show
+            try
+            {
+                DetailsGridView.HeaderRow.Cells[0].Text = "";
+                DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+                DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+                DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+                DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+                DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+                DetailsGridView.HeaderRow.Cells[6].Text = "Date";
+                NoDataOnDateLabel.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                // Provide User Feedback When There is No Data in Database for the Date Selected
+                NoDataOnDateLabel.Visible = true;
+                
+            }
+                // Associate the insert command
+                //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
+                // adapter3.InsertCommand.ExecuteNonQuery();
+
+                // Close all objects
+                command3.Dispose();
+                cnn.Close();
            
-
-            command3 = new SqlCommand(sql, cnn);
-            SqlDataReader r = command3.ExecuteReader();
-            DetailsGridView.DataSource = r;
-            DetailsGridView.DataBind();
-
-            DetailsGridView.HeaderRow.Cells[0].Text = "";
-            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
-            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
-            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
-            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
-            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
-            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
-
-            // Associate the insert command
-            //adapter3.InsertCommand = new SqlCommand(sql3, cnn);
-            // adapter3.InsertCommand.ExecuteNonQuery();
-
-            // Close all objects
-            command3.Dispose();
-            cnn.Close();
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)

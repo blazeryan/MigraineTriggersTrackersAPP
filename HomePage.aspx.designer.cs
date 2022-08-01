@@ -330,6 +330,15 @@ namespace MigraineTriggersTrackersAPP
         protected global::System.Web.UI.WebControls.Calendar Calendar1;
 
         /// <summary>
+        /// NoDataOnDateLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label NoDataOnDateLabel;
+
+        /// <summary>
         /// AddSleepButton control.
         /// </summary>
         /// <remarks>

@@ -73,7 +73,7 @@
         
         <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]" OnSelecting="QuantityDataSource_Selecting1"></asp:SqlDataSource>
         
-        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 5; left: 444px; top: 60px; position: absolute; height: 106px; width: 84px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True">
+        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 5; left: 435px; top: 60px; position: absolute; height: 106px; width: 84px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True" SelectionMode="DayWeekMonth">
             <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
             <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
             <OtherMonthDayStyle ForeColor="#CC9966" />
@@ -81,8 +81,21 @@
             <SelectorStyle BackColor="#FFCC66" />
             <TitleStyle BackColor="#0066FF" Font-Bold="True" Font-Size="9pt" ForeColor="#FFFFCC" />
             <TodayDayStyle BackColor="#FFCC66" ForeColor="White" />
+
+
         </asp:Calendar>
-        <asp:Button ID="AddSleepButton" runat="server" style="z-index: 5; left: 255px; top: 305px; position: absolute; width: 130px;" Text="Add Sleep" OnClick="AddSleepButton_Click" Font-Bold="True" Visible="False" BackColor="#FFCC66" />
+
+
+ 
+
+
+        <asp:Label ID="NoDataOnDateLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 442px; top: 253px; position: absolute; width: 153px" Text="You did not have a migraine on this date!" Visible="False"></asp:Label>
+
+
+ 
+
+
+        <asp:Button ID="AddSleepButton" runat="server" style="z-index: 5; left: 259px; top: 305px; position: absolute; width: 130px;" Text="Add Sleep" OnClick="AddSleepButton_Click" Font-Bold="True" Visible="False" BackColor="#FFCC66" />
         <asp:Button ID="FoodDetailsButton" runat="server" OnClick="FoodDetailsButton_Click" style="z-index: 1; left: 255px; top: 350px; position: absolute; width: 130px" Text="Food Details &gt;&gt;" Visible="False" BackColor="#FFCC66" Font-Bold="True" />
         <asp:Button ID="AddFoodsButton" runat="server" style="z-index: 5; left: 255px; top: 305px; position: absolute; width: 130px" Text="Add Food" Font-Bold="True" OnClick="AddFoodsButton_Click" Visible="False" BackColor="#FFCC66" />
         <asp:Button ID="AddDrinksButton" runat="server" Text="Add Drinks" Font-Bold="True" style="z-index: 6; left: 255px; position: absolute; width: 130px; top: 305px;" OnClick="AddDrinksButton_Click" Visible="False" BackColor="#FFCC66" />
@@ -122,7 +135,7 @@
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 359px; top: 405px; position: absolute; right: 806px;" Text="Quantity"></asp:Label>
         <asp:Label ID="TimeListBoxLabel" runat="server" BorderColor="White" CssClass="TimeListBoxClass" Font-Bold="True" Text="Time" ForeColor="#003399" ></asp:Label>
         
-        <asp:ListBox class="listbox" ID="MigraineListBox" runat="server" AutoPostBack="True" style="z-index: 1; left: 22px; top: 426px; position: absolute; height: 229px; width: 137px; right: 1068px;" OnSelectedIndexChanged="MigraineListBox_SelectedIndexChanged"></asp:ListBox>
+        <asp:ListBox class="listbox" ID="MigraineListBox" runat="server" AutoPostBack="True" style="z-index: 1; left: 22px; top: 426px; position: absolute; height: 229px; width: 137px; right: 1787px;" OnSelectedIndexChanged="MigraineListBox_SelectedIndexChanged"></asp:ListBox>
     </form>
 </body>
 </html>
