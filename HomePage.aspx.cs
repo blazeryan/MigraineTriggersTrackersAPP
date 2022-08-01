@@ -148,6 +148,8 @@ namespace MigraineTriggersTrackersAPP
             // Display Column Data from Detail Table in GridView Only if There is Data to Show
             try
             {
+                
+                NoDataOnDateLabel.Visible = false;
                 DetailsGridView.HeaderRow.Cells[0].Text = "";
                 DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
                 DetailsGridView.HeaderRow.Cells[2].Text = "Time";

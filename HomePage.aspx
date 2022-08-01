@@ -129,6 +129,8 @@
         </asp:GridView>
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes], [date] FROM [details]"></asp:SqlDataSource>
+        <asp:Panel ID="DetailsPanel" runat="server" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" style="z-index: 0; left: 631px; top: 17px; position: absolute; height: 631px; width: 684px">
+        </asp:Panel>
         <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" TextMode="MultiLine"></asp:TextBox>
