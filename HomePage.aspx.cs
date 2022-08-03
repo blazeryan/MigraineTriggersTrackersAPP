@@ -23,7 +23,7 @@ namespace MigraineTriggersTrackersAPP
             cnn = new SqlConnection(connectionString);
             cnn.Open();
 
-           // Response.Write("Connection Made");
+            Response.Write("Connection Made");
             // cnn.Close();
 
             // Construct select statement to read data from database.
@@ -47,7 +47,7 @@ namespace MigraineTriggersTrackersAPP
                 Output = Output + dataReader.GetValue(0) + " - " + dataReader.GetValue(1) + " - " + dataReader.GetValue(2) + " - " + dataReader.GetValue(3) + " - " + dataReader.GetValue(4) + dataReader.GetValue(5) + "</br>";
             }
 
-            // Response.Write(Output);
+            Response.Write(Output);
             dataReader.Close();
             command.Dispose();
             cnn.Close();
@@ -82,7 +82,7 @@ namespace MigraineTriggersTrackersAPP
 
             // GetTodays Date
             DateTime todaysDateTime = DateTime.Now;
-            // Response.Write(todaysDateTime.ToString());
+            Response.Write(todaysDateTime.ToString());
 
             // Close all objects
             command2.Dispose();
@@ -647,11 +647,6 @@ namespace MigraineTriggersTrackersAPP
         }
 
         protected void IntensityDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
-        {
-
-        }
-
-        protected void HoursDataSource_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
         }
