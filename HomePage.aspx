@@ -112,7 +112,7 @@
         <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute; right: 1213px;" Text="Food" Visible="False"></asp:Label>
         <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute; right: 1206px;" Text="Drinks" Visible="False"></asp:Label>
 
-        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False"  OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 4; left: 632px; top: 17px; position: absolute; width: 686px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Solid">
+        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False"  OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 629px; top: 17px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
             <AlternatingRowStyle BackColor="#0066FF" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
@@ -129,7 +129,7 @@
         </asp:GridView>
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes], [date] FROM [details]"></asp:SqlDataSource>
-        <asp:Panel ID="DetailsPanel" runat="server" BackColor="#3399FF" BorderColor="White" BorderStyle="Solid" style="z-index: 0; left: 631px; top: 17px; position: absolute; height: 631px; width: 684px">
+        <asp:Panel ID="DetailsPanel" runat="server" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" style="z-index: 0; left: 631px; top: 17px; position: absolute; height: 631px; width: 684px">
         </asp:Panel>
         <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
