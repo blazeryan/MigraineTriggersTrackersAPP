@@ -48,6 +48,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
+          
 
             // Variable declaration
             string connectionString;
@@ -63,6 +64,12 @@ namespace MigraineTriggersTrackersAPP
             string sql = null;
             sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
+            if (sql != null)
+            {
+                NoDataOnDateLabel.Visible = false;
+            }
+           
+
             SqlCommand command3;
             SqlDataAdapter adapter3 = new SqlDataAdapter();
 
@@ -76,7 +83,6 @@ namespace MigraineTriggersTrackersAPP
             try
             {
 
-                NoDataOnDateLabel.Visible = false;
                 DetailsGridView.HeaderRow.Cells[0].Text = "";
                 DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
                 DetailsGridView.HeaderRow.Cells[2].Text = "Time";
@@ -97,7 +103,7 @@ namespace MigraineTriggersTrackersAPP
             command3.Dispose();
             cnn.Close();
 
-
+           
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
