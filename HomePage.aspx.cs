@@ -327,6 +327,8 @@ namespace MigraineTriggersTrackersAPP
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
+            
+
             // Add text from NoesTextBox to NotesListBox
             NotesListBox.Items.Add(NotesTextBox.Text.ToString());
 
@@ -393,7 +395,7 @@ namespace MigraineTriggersTrackersAPP
             MigraineListBox.Items.RemoveAt(MigraineListBox.Items.Count - 1);
             TimeListBox.Items.RemoveAt(TimeListBox.Items.Count - 1);
             IntensityListBox.Items.RemoveAt(IntensityListBox.Items.Count - 1);
-            QuantityListBox.Items.RemoveAt(QuantityDropDownList.Items.Count - 1);
+            QuantityListBox.Items.RemoveAt(QuantityListBox.Items.Count - 1);
             NotesListBox.Items.RemoveAt(NotesListBox.Items.Count - 1);
         }
 
