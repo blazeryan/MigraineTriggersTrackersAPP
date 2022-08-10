@@ -59,8 +59,9 @@
         </asp:DropDownList>
         <asp:SqlDataSource ID="IntensityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [intensity_number] FROM [intensity]" OnSelecting="IntensityDataSource_Selecting"></asp:SqlDataSource>
         <asp:Button ID="RemoveLastButton" runat="server" OnClick="RemoveLastButton_Click" style="z-index: 1; left: 22px; top: 660px; position: absolute; width: 130px; right: 1088px;" Text="Remove Last" Font-Bold="True" BackColor="#FFCC66" />
-        <asp:Panel ID="DatePanel" runat="server" BackColor="#0066FF" style="z-index: 1; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
+        <asp:Panel ID="DatePanel" runat="server" BackColor="#0066FF" style="z-index: 5; left: 425px; top: 17px; position: absolute; height: 370px; width: 177px" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" Font-Bold="True">
             <asp:Label ID="DatePanelLabel" runat="server" style="z-index: 0; left: 66px; top: 3px; position: absolute" Text="Date" Font-Bold="True" Font-Italic="True" ForeColor="White"></asp:Label>
+            <asp:HyperLink ID="MayoClinicHyperlink" runat="server" NavigateUrl="https://www.mayo.edu/research/clinical-trials/diseases-conditions/migraine" style="z-index: 5; left: 16px; top: 328px; position: absolute; width: 183px; height: 31px;" ForeColor="#FFCC66">Mayo Clinic Studies</asp:HyperLink>
         </asp:Panel>
         <asp:Label ID="IntensityListBoxLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 248px; top: 405px; position: absolute" Text="Intensity"></asp:Label>
         <asp:DropDownList ID="DrinksDropDownList" runat="server" AutoPostBack="True" style="z-index: 6; left: 50px; top: 80px; position: absolute; width: 130px;" DataSourceID="DrinksDataSource" DataTextField="drink_name" DataValueField="drink_name" Visible="False">
@@ -73,7 +74,7 @@
         
         <asp:SqlDataSource ID="QuantityDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [quantity_number] FROM [quantity]" OnSelecting="QuantityDataSource_Selecting1"></asp:SqlDataSource>
         
-        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 5; left: 435px; top: 60px; position: absolute; height: 106px; width: 84px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True">
+        <asp:Calendar ID="Calendar1" runat="server" style="z-index: 6; left: 445px; top: 60px; position: absolute; height: 106px; width: 84px; margin-bottom: 0px;" BackColor="#FFFFCC" BorderColor="#FFCC66" BorderWidth="1px" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="#663399" OnSelectionChanged="Calendar1_SelectionChanged" ShowGridLines="True">
             <DayHeaderStyle BackColor="#FFCC66" Font-Bold="True" Height="1px" />
             <NextPrevStyle Font-Size="9pt" ForeColor="#FFFFCC" />
             <OtherMonthDayStyle ForeColor="#CC9966" />
@@ -89,7 +90,7 @@
  
 
 
-        <asp:Label ID="NoDataOnDateLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 1; left: 442px; top: 253px; position: absolute; width: 153px" Text="You did not have a migraine on this date!" Visible="False"></asp:Label>
+        <asp:Label ID="NoDataOnDateLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 5; left: 442px; top: 241px; position: absolute; width: 153px" Text="You did not have a migraine on this date!" Visible="False"></asp:Label>
 
 
  
@@ -130,7 +131,7 @@
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes], [date] FROM [details]"></asp:SqlDataSource>
         
-        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 450px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
+        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 484px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" TextMode="MultiLine"></asp:TextBox>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 359px; top: 405px; position: absolute; right: 806px;" Text="Quantity"></asp:Label>

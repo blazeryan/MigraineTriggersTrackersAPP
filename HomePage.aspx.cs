@@ -48,10 +48,9 @@ namespace MigraineTriggersTrackersAPP
 
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
-          
 
-            // Variable declaration
-            string connectionString;
+           // Variable declaration
+           string connectionString;
             SqlConnection cnn;
 
             // Set connection string
@@ -68,7 +67,6 @@ namespace MigraineTriggersTrackersAPP
             {
                 NoDataOnDateLabel.Visible = false;
             }
-           
 
             SqlCommand command3;
             SqlDataAdapter adapter3 = new SqlDataAdapter();
@@ -455,6 +453,10 @@ namespace MigraineTriggersTrackersAPP
 
                 sql3 = string.Format("INSERT INTO details (date, migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}' )",
                 todaysDateTime, migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
+
+                // Get Data from Detail Table for Selected Date on Calendar Control
+                // string sql = null;
+                // sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
                 command3 = new SqlCommand(sql3, cnn);
 
