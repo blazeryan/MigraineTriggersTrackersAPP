@@ -483,7 +483,7 @@ namespace MigraineTriggersTrackersAPP
 
         protected void DetailsGridView_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void SleepDetailsButton_Click(object sender, EventArgs e)

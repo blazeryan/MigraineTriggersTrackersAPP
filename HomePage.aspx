@@ -113,7 +113,7 @@
         <asp:Label ID="FoodDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute; right: 1213px;" Text="Food" Visible="False"></asp:Label>
         <asp:Label ID="DrinkDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 52px; top: 60px; position: absolute; right: 1206px;" Text="Drinks" Visible="False"></asp:Label>
 
-        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False"  OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 629px; top: 17px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px">
+        <asp:GridView ID="DetailsGridView" runat="server" AutoGenerateColumns="False"  OnSelectedIndexChanged="DetailsGridView_SelectedIndexChanged" style="z-index: 1; left: 629px; top: 17px; position: absolute; width: 584px; margin-right: 178px; margin-top: 0px;" BackColor="#3399FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" AutoGenerateSelectButton="False">
             <AlternatingRowStyle BackColor="#0066FF" />
             <Columns>
                 <asp:CommandField ShowSelectButton="True" />
