@@ -96,7 +96,7 @@
  
 
 
-        <asp:Button ID="AddSleepButton" runat="server" style="z-index: 5; left: 259px; top: 305px; position: absolute; width: 130px;" Text="Add Sleep" OnClick="AddSleepButton_Click" Font-Bold="True" Visible="False" BackColor="#FFCC66" />
+        <asp:Button ID="AddSleepButton" runat="server" style="z-index: 5; left: 255px; top: 305px; position: absolute; width: 130px;" Text="Add Sleep" OnClick="AddSleepButton_Click" Font-Bold="True" Visible="False" BackColor="#FFCC66" />
         <asp:Button ID="FoodDetailsButton" runat="server" OnClick="FoodDetailsButton_Click" style="z-index: 1; left: 255px; top: 350px; position: absolute; width: 130px" Text="Food Details &gt;&gt;" Visible="False" BackColor="#FFCC66" Font-Bold="True" />
         <asp:Button ID="AddFoodsButton" runat="server" style="z-index: 5; left: 255px; top: 305px; position: absolute; width: 130px" Text="Add Food" Font-Bold="True" OnClick="AddFoodsButton_Click" Visible="False" BackColor="#FFCC66" />
         <asp:Button ID="AddDrinksButton" runat="server" Text="Add Drinks" Font-Bold="True" style="z-index: 6; left: 255px; position: absolute; width: 130px; top: 305px;" OnClick="AddDrinksButton_Click" Visible="False" BackColor="#FFCC66" />

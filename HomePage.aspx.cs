@@ -13,7 +13,8 @@ namespace MigraineTriggersTrackersAPP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-     
+
+            NoDataOnDateLabel.Visible = false;
 
         }
 
@@ -49,8 +50,10 @@ namespace MigraineTriggersTrackersAPP
         protected void Calendar1_SelectionChanged(object sender, EventArgs e)
         {
 
-           // Variable declaration
-           string connectionString;
+
+
+            // Variable declaration
+            string connectionString;
             SqlConnection cnn;
 
             // Set connection string
@@ -61,12 +64,8 @@ namespace MigraineTriggersTrackersAPP
 
             // Get Data from Detail Table for Selected Date on Calendar Control
             string sql = null;
-            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
-            if (sql != null)
-            {
-                NoDataOnDateLabel.Visible = false;
-            }
+            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
 
             SqlCommand command3;
             SqlDataAdapter adapter3 = new SqlDataAdapter();
@@ -75,7 +74,6 @@ namespace MigraineTriggersTrackersAPP
             SqlDataReader r = command3.ExecuteReader();
             DetailsGridView.DataSource = r;
             DetailsGridView.DataBind();
-
 
             // Display Column Data from Detail Table in GridView Only if There is Data to Show
             try
@@ -94,14 +92,11 @@ namespace MigraineTriggersTrackersAPP
             {
                 // Provide User Feedback When There is No Data in Database for the Date Selected
                 NoDataOnDateLabel.Visible = true;
-
             }
 
             // Close all objects
             command3.Dispose();
             cnn.Close();
-
-           
         }
 
         protected void AddSymptomButton_Click(object sender, EventArgs e)
@@ -232,17 +227,17 @@ namespace MigraineTriggersTrackersAPP
             MinutesDropDownList.SelectedIndex = 0;
         }
 
+
         protected void SymptomDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
         }
 
+
         protected void MigraineListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
-
-
 
         protected void SymptomsDropdownList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -331,8 +326,6 @@ namespace MigraineTriggersTrackersAPP
             IntensityListBox.Items.Add(IntensityDropDownList.SelectedItem.ToString());
             QuantityListBox.Items.Add(QuantityDropDownList.SelectedItem.ToString());
 
-            
-
             // Add text from NoesTextBox to NotesListBox
             NotesListBox.Items.Add(NotesTextBox.Text.ToString());
 
@@ -359,10 +352,6 @@ namespace MigraineTriggersTrackersAPP
 
         protected void HoursDropDownList_SelectedIndexChanged1(object sender, EventArgs e)
         {
-
-
-
-
 
         }
 
@@ -479,21 +468,16 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
             DetailsGridView.HeaderRow.Cells[6].Text = "Date";
 
-
-           
-
-
-
-            // Close all objects
-            //command3.Dispose();
-            cnn.Close();
-
             // clear all ListBoxItems
             MigraineListBox.Items.Clear();
             TimeListBox.Items.Clear();
             IntensityListBox.Items.Clear();
             QuantityListBox.Items.Clear();
             NotesListBox.Items.Clear();
+
+            // Close all objects
+            command4.Dispose();
+            cnn.Close();
 
         }
 
@@ -518,6 +502,8 @@ namespace MigraineTriggersTrackersAPP
             SymptomLabel.Visible = false;
             SleepDropDownLabel.Visible = true;
 
+            SleepDetailsButton.Visible = false;
+            FoodDetailsButton.Visible = true;
         }
 
         protected void SleepDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -547,19 +533,18 @@ namespace MigraineTriggersTrackersAPP
 
         protected void FoodDetailsButton_Click(object sender, EventArgs e)
         {
+            // Make DropDownLists and related buttons visible 
             FoodDropDownList.Visible = true;
             AddFoodsButton.Visible = true;
-            FoodDetailsButton.Visible = false;
             DrinkDetailsButton.Visible = true;
-
-
+            FoodDropDownLabel.Visible = true;
+            // Make DropDownLists and related buttons invisible 
+            FoodDetailsButton.Visible = false;
             SleepDropDownList.Visible = false;
             AddSleepButton.Visible = false;
             SleepDetailsButton.Visible = false;
-
-            // Show FoodDropDownLabel Disapear Sleep DropDownLabel
             SleepDropDownLabel.Visible = false;
-            FoodDropDownLabel.Visible = true;
+
         }
 
         protected void QuantityDataSource_Selecting1(object sender, SqlDataSourceSelectingEventArgs e)
@@ -571,22 +556,19 @@ namespace MigraineTriggersTrackersAPP
         {
             DrinksDropDownList.Visible = true;
             AddDrinksButton.Visible = true;
+            DrinkDropDownLabel.Visible = true;
+
             FoodDetailsButton.Visible = false;
             DrinkDetailsButton.Visible = false;
-
             FoodDropDownList.Visible = false;
             AddFoodsButton.Visible = false;
-
-            // Show DrinksDropDownLabel Disapear FoodDropDownLabel
             FoodDropDownLabel.Visible = false;
-            DrinkDropDownLabel.Visible = true;
+
         }
 
         protected void SleepDataSource_Selecting2(object sender, SqlDataSourceSelectingEventArgs e)
         {
-            SleepDetailsButton.Visible = false;
-            FoodDetailsButton.Visible = true;
-
+        
         }
 
         protected void IntensityDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
@@ -596,9 +578,6 @@ namespace MigraineTriggersTrackersAPP
 
         protected void historyButton_Click(object sender, EventArgs e)
         {
-
-            //Insert ListBox Items
-
             // Variable declaration
             string connectionString;
             SqlConnection cnn;
