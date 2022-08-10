@@ -406,9 +406,6 @@ namespace MigraineTriggersTrackersAPP
         protected void SubmitButton_Click(object sender, EventArgs e)
         {
 
-
-            //Insert ListBox Items
-
             // Variable declaration
             string connectionString;
             SqlConnection cnn;
@@ -422,8 +419,6 @@ namespace MigraineTriggersTrackersAPP
             SqlCommand command3;
             SqlDataAdapter adapter3 = new SqlDataAdapter();
             String sql3 = "";
-
-
 
             System.Collections.IList list = MigraineListBox.Items;
             for (int i = 0; i < list.Count; i++)
@@ -454,10 +449,6 @@ namespace MigraineTriggersTrackersAPP
                 sql3 = string.Format("INSERT INTO details (date, migraine_detail, time, quantity, intensity, notes) VALUES ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}' )",
                 todaysDateTime, migraineItem, timeListBoxItem, intensityListBoxItem, quantityListBoxItem, notesListBoxItem, i);
 
-                // Get Data from Detail Table for Selected Date on Calendar Control
-                // string sql = null;
-                // sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.SelectedDate.Day + "'";
-
                 command3 = new SqlCommand(sql3, cnn);
 
                 // Associate the insert command
@@ -466,10 +457,20 @@ namespace MigraineTriggersTrackersAPP
 
             }
 
-            // Bind Gridview on button click or get new data from table and display in gridview
-            DetailsGridView.DataSource = GridViewDataSource;
+            SqlCommand command4;
+            SqlDataAdapter adapter4 = new SqlDataAdapter();
+
+            // Get Data from Detail Table for Selected Date on Calendar Control
+            string sql = null;
+            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE day(date)='" + Calendar1.TodaysDate.Day + "'";
+
+            command4 = new SqlCommand(sql, cnn);
+            SqlDataReader rr = command4.ExecuteReader();
+            DetailsGridView.DataSource = rr;
             DetailsGridView.DataBind();
 
+
+            // Change table names to readable text
             DetailsGridView.HeaderRow.Cells[0].Text = "";
             DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
             DetailsGridView.HeaderRow.Cells[2].Text = "Time";
@@ -477,6 +478,11 @@ namespace MigraineTriggersTrackersAPP
             DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
             DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
             DetailsGridView.HeaderRow.Cells[6].Text = "Date";
+
+
+           
+
+
 
             // Close all objects
             //command3.Dispose();
@@ -586,6 +592,45 @@ namespace MigraineTriggersTrackersAPP
         protected void IntensityDataSource_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
 
+        }
+
+        protected void historyButton_Click(object sender, EventArgs e)
+        {
+
+            //Insert ListBox Items
+
+            // Variable declaration
+            string connectionString;
+            SqlConnection cnn;
+
+            // Set connection string
+            connectionString = "Data Source=(local);Initial Catalog=MigraineTriggersTrackersDB;Integrated Security=True";
+
+            cnn = new SqlConnection(connectionString);
+            cnn.Open();
+
+            // Bind Gridview on button click or get new data from table and display in gridview
+            DetailsGridView.DataSource = GridViewDataSource;
+            DetailsGridView.DataBind();
+
+            DetailsGridView.HeaderRow.Cells[0].Text = "";
+            DetailsGridView.HeaderRow.Cells[1].Text = "Migraine Details";
+            DetailsGridView.HeaderRow.Cells[2].Text = "Time";
+            DetailsGridView.HeaderRow.Cells[3].Text = "Quantity";
+            DetailsGridView.HeaderRow.Cells[4].Text = "Intensity";
+            DetailsGridView.HeaderRow.Cells[5].Text = "Notes";
+            DetailsGridView.HeaderRow.Cells[6].Text = "Date";
+
+            // Close all objects
+            //command3.Dispose();
+            cnn.Close();
+
+            // clear all ListBoxItems
+            MigraineListBox.Items.Clear();
+            TimeListBox.Items.Clear();
+            IntensityListBox.Items.Clear();
+            QuantityListBox.Items.Clear();
+            NotesListBox.Items.Clear();
         }
     }
 }

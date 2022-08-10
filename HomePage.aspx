@@ -131,9 +131,9 @@
         <asp:ListBox ID="NotesListBox" runat="server" AutoPostBack="True" style="z-index: 5; left: 476px; top: 426px; position: absolute; height: 230px; width: 137px"></asp:ListBox>
         <asp:SqlDataSource ID="GridViewDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [migraine_detail], [time], [quantity], [intensity], [notes], [date] FROM [details]"></asp:SqlDataSource>
         
-        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 484px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
+        <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 484px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
-            <asp:Button ID="historyButton" runat="server" style="z-index: 6; left: 455px; top: 305px; position: absolute" Text="History" BackColor="#FFCC66" Font-Bold="True" Width="130px" />
+            <asp:Button ID="historyButton" runat="server" style="z-index: 6; left: 455px; top: 305px; position: absolute" Text="History" BackColor="#FFCC66" Font-Bold="True" Width="130px" OnClick="historyButton_Click" />
         
             <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 40px; top: 143px; position: absolute; width: 142px; height: 220px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" TextMode="MultiLine"></asp:TextBox>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 359px; top: 405px; position: absolute; right: 806px;" Text="Quantity"></asp:Label>
