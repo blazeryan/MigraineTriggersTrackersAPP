@@ -90,7 +90,7 @@
  
 
 
-        <asp:Label ID="NoDataOnDateLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 5; left: 442px; top: 241px; position: absolute; width: 153px" Text="You did not have a migraine on this date!" Visible="False"></asp:Label>
+        <asp:Label ID="NoDataOnDateLabel" runat="server" Font-Bold="True" ForeColor="White" style="z-index: 5; left: 442px; top: 247px; position: absolute; width: 153px" Text="You did not have a migraine on this date!" Visible="False"></asp:Label>
 
 
  
@@ -133,7 +133,9 @@
         
         <asp:Button ID="SubmitButton" runat="server" style="z-index: 1; left: 484px; top: 660px; position: absolute; width: 130px;" Text="Submit" Font-Bold="True" BackColor="#FFCC66" OnClick="SubmitButton_Click" />
         
-            <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 46px; top: 143px; position: absolute; width: 142px; height: 233px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" TextMode="MultiLine"></asp:TextBox>
+            <asp:Button ID="historyButton" runat="server" style="z-index: 6; left: 455px; top: 305px; position: absolute" Text="History" BackColor="#FFCC66" Font-Bold="True" Width="130px" />
+        
+            <asp:TextBox ID="NotesTextBox" runat="server" style="z-index: 1; left: 40px; top: 143px; position: absolute; width: 142px; height: 220px;" OnTextChanged="NotesTextBox_TextChanged" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" TextMode="MultiLine"></asp:TextBox>
         <asp:Label ID="QuantityLabel" runat="server" Font-Bold="True" Font-Underline="False" ForeColor="#003399" style="z-index: 1; left: 359px; top: 405px; position: absolute; right: 806px;" Text="Quantity"></asp:Label>
         <asp:Label ID="TimeListBoxLabel" runat="server" BorderColor="White" CssClass="TimeListBoxClass" Font-Bold="True" Text="Time" ForeColor="#003399" ></asp:Label>
         
