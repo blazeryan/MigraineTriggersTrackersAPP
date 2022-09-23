@@ -15,6 +15,7 @@ namespace MigraineTriggersTrackersAPP
         {
 
             NoDataOnDateLabel.Visible = false;
+            // TEST COMMENT FOR COMMIT TO GIT HUB
 
         }
 
