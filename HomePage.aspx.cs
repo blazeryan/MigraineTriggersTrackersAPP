@@ -66,9 +66,7 @@ namespace MigraineTriggersTrackersAPP
             // Get Data from Detail Table for Selected Date on Calendar Control
             string sql = null;
 
-
-            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE month(date)='" + Calendar1.SelectedDate.Month + "'";
-
+            sql = "SELECT date, migraine_detail, time, quantity, intensity, notes FROM details WHERE date='" + Calendar1.SelectedDate.ToString() + "'";
 
             SqlCommand command3;
             SqlDataAdapter adapter3 = new SqlDataAdapter();
