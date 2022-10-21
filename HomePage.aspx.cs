@@ -612,5 +612,10 @@ namespace MigraineTriggersTrackersAPP
             QuantityListBox.Items.Clear();
             NotesListBox.Items.Clear();
         }
+
+        protected void IntensityListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

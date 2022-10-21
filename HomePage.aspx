@@ -28,7 +28,7 @@
             <asp:SqlDataSource ID="FoodDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:MigraineTriggersTrackersDBConnectionString %>" SelectCommand="SELECT [food_name] FROM [food]"></asp:SqlDataSource>
             <asp:Label ID="PropertiesPanelLabel" runat="server" Font-Bold="True" Font-Italic="True" ForeColor="White" style="z-index: 4; left: 269px; top: 26px; position: absolute; width: 103px; height: 29px;" Text="Properties"></asp:Label>
             <asp:ListBox ID="QuantityListBox" runat="server" style="z-index: 4; left: 357px; top: 426px; position: absolute; height: 230px; width: 136px;" OnSelectedIndexChanged="QuantityListBox_SelectedIndexChanged"></asp:ListBox>
-            <asp:ListBox ID="TimeListBox" runat="server" style="z-index: 4; left: 131px; top: 426px; position: absolute; height: 229px; width: 136px;" OnSelectedIndexChanged="TimeListBox_SelectedIndexChanged"></asp:ListBox>
+            <asp:ListBox ID="TimeListBox" runat="server" style="z-index: 2; left: 131px; top: 426px; position: absolute; height: 229px; width: 136px;" OnSelectedIndexChanged="TimeListBox_SelectedIndexChanged"></asp:ListBox>
         </p>
         <asp:DropDownList ID="SymptomsDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="SymptomsDropdownList_SelectedIndexChanged" style="z-index: 4; left: 50px; top: 80px; position: absolute; width: 130px; right: 1060px;" DataSourceID="SymptomsDataSource" DataTextField="symptom_name" DataValueField="symptom_name">
             <asp:ListItem>Symptoms</asp:ListItem>
@@ -53,7 +53,7 @@
         <asp:Panel ID="SymptomsPanel" runat="server" BackColor="#0066FF" BorderColor="White" BorderStyle="Inset" BorderWidth="5px" style="z-index: 0; left: 25px; top: 17px; position: absolute; height: 370px; width: 177px">
         </asp:Panel>
         <asp:Label ID="IntensityDropDownLabel" runat="server" Font-Bold="True" ForeColor="#003399" style="z-index: 1; left: 265px; position: absolute; right: 696px; top: 179px;" Text="Intensity"></asp:Label>
-        <asp:ListBox ID="IntensityListBox" runat="server" AutoPostBack="True" style="z-index: 3; left: 244px; top: 426px; position: absolute; height: 229px; width: 137px"></asp:ListBox>
+        <asp:ListBox ID="IntensityListBox" runat="server" AutoPostBack="True" style="z-index: 3; left: 244px; top: 426px; position: absolute; height: 229px; width: 137px" OnSelectedIndexChanged="IntensityListBox_SelectedIndexChanged"></asp:ListBox>
         <asp:DropDownList ID="IntensityDropDownList" runat="server" AutoPostBack="True" style="z-index: 1; left: 265px; top: 202px; position: absolute; width: 105px;" OnSelectedIndexChanged="IntensityDropDownList_SelectedIndexChanged1" DataSourceID="IntensityDataSource" DataTextField="intensity_number" DataValueField="intensity_number">
             <asp:ListItem Value="Intensity"></asp:ListItem>
         </asp:DropDownList>
